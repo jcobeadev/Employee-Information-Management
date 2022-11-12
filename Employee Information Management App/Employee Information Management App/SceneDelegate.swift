@@ -19,6 +19,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.appCoordinator = AppCoordinator(window: window)
         appCoordinator? .start()
+
+        createJSONIfDoesNotExist()
     }
 
+    private func createJSONIfDoesNotExist() {
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory,
+                                                            in: .userDomainMask,
+                                                            appropriateFor: nil, create: false)
+            let companiesSubURL = documentDirectory.appendingPathComponent("Companies.json")
+            let employeesSubURL = documentDirectory.appendingPathComponent("Employees.json")
+
+            createFileIfDoesNotExist(url: companiesSubURL)
+            createFileIfDoesNotExist(url: employeesSubURL)
+        } catch {
+            print(error)
+        }
+    }
+
+    private func createFileIfDoesNotExist(url: URL) {
+        guard !FileManager.default.fileExists(atPath: url.path) else { return }
+
+        FileManager.default.createFile(atPath: url.path, contents: nil)
+    }
 }
