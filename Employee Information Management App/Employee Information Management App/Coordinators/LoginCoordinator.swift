@@ -17,7 +17,7 @@ final class LoginCoordinator: Coordinator {
     }
 
     func start() {
-        let loginViewController = LoginViewController.instantiate()
+        let loginViewController: LoginViewController = .instantiate()
         navigationController.setViewControllers([loginViewController], animated: false)
     }
 

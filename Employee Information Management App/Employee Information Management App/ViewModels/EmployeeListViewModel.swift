@@ -11,8 +11,10 @@ final class EmployeeListViewModel {
 
     let title = "Employees"
 
+    var coordinator: EmployeeListCoordinator?
+
     func tappedAddEmployee() {
-        print("tapped.")
+         coordinator?.startAddEmployee()
     }
 
 }

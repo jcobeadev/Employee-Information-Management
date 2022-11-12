@@ -17,9 +17,28 @@ final class EmployeeListCoordinator: Coordinator {
     }
 
     func start() {
-        let employeeListViewController = EmployeeListViewController.instantiate()
+        let employeeListViewController: EmployeeListViewController = .instantiate()
         let employeeListViewModel = EmployeeListViewModel()
+        employeeListViewModel.coordinator = self
         employeeListViewController.viewModel = employeeListViewModel
         navigationController.setViewControllers([employeeListViewController], animated: false)
+    }
+
+    func startAddEmployee() {
+        let addEmployeeCoordinator = AddEmployeeCoordinator(navigationController: navigationController)
+        addEmployeeCoordinator.parentCoordinator = self
+        childCoordinators.append(addEmployeeCoordinator)
+        addEmployeeCoordinator.start()
+    }
+
+    func childDidFinish(_ childCoordinator: Coordinator) {
+
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === childCoordinator {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+
     }
 }

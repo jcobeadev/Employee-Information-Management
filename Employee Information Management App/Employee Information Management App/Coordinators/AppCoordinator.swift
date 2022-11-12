@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     /// `childCoordinators` is a collection to make sure that
     /// our coordinators are retained and we don't deallocate them immediately
     var childCoordinators: [Coordinator] { get }

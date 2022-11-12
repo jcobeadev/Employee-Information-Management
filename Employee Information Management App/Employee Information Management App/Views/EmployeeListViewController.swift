@@ -12,12 +12,6 @@ final class EmployeeListViewController: UIViewController {
     private let localDataManager = LocalDataManager()
     var viewModel: EmployeeListViewModel!
 
-    static func instantiate() -> EmployeeListViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "EmployeeListViewController") as! EmployeeListViewController
-        return controller
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
