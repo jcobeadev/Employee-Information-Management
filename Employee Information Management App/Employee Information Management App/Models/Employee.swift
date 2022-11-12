@@ -11,7 +11,7 @@ struct Employee {
     let id: String
     let companyID: String
     let firstName: String
-    let lastLame: String
+    let lastName: String
     let role: String
     let isResigned: Bool
 }

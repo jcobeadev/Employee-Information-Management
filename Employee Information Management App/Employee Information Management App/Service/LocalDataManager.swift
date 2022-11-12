@@ -7,6 +7,13 @@
 
 import Foundation
 
+protocol EmployeeLocalDataManager {
+    typealias AddEmployeeResult = Swift.Result<Employee, Error>
+    typealias AddEmployeeResultCompletion = (AddEmployeeResult) -> Void
+
+    func addEmployee(firstName: String, lastName: String, role: String, completion: @escaping AddEmployeeResultCompletion)
+}
+
 final class LocalDataManager {
     private func fetchCompanies() throws -> [Company] {
         do {
@@ -33,6 +40,59 @@ final class LocalDataManager {
 
         } catch {
             throw error
+        }
+    }
+
+    private func fetchEmployees() throws -> [Employee] {
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
+            let url = documentDirectory.appendingPathComponent("Employees.json")
+            let jsonData = try Data(contentsOf: url)
+            if jsonData.isEmpty { return [] }
+            let employees = try JSONDecoder().decode([PersistableEmployee].self, from: jsonData)
+            return employees.map { Employee(id: $0.id, companyID: $0.company_id, firstName: $0.first_name, lastName: $0.last_name, role: $0.role, isResigned: $0.is_resigned)}
+        } catch {
+            throw error
+        }
+    }
+
+    private func writeData(employees: [PersistableEmployee]) throws {
+        do {
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
+            let url = documentDirectory.appendingPathComponent("Employees.json")
+
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let data = try encoder.encode(employees)
+            try data.write(to: url)
+        } catch {
+            throw error
+        }
+    }
+
+}
+
+// MARK: - Employee
+extension LocalDataManager: EmployeeLocalDataManager {
+    func addEmployee(firstName: String, lastName: String, role: String, completion: @escaping AddEmployeeResultCompletion) {
+        let companyProvider = CompanyProvider()
+
+        let employee = Employee(
+            id: UUID().uuidString,
+            companyID: companyProvider.currentCompany()?.id ?? "",
+            firstName: firstName,
+            lastName: lastName,
+            role: role,
+            isResigned: false
+        )
+
+        do {
+            var employees = try fetchEmployees()
+            employees.append(employee)
+            try writeData(employees: employees.map { PersistableEmployee(id: $0.id, company_id: $0.companyID, first_name: $0.firstName, last_name: $0.lastName, role: $0.role, is_resigned: $0.isResigned)})
+            completion(.success(employee))
+        } catch {
+            completion(.failure(error))
         }
     }
 }

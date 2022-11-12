@@ -36,7 +36,7 @@ final class AddEmployeeViewController: UIViewController {
 
     @objc
     private func tappedDone() {
-        print("tapped done.")
+        viewModel.tappedDoneButton()
     }
 
     @objc
@@ -70,5 +70,6 @@ extension AddEmployeeViewController {
             .rx.text.map { $0 ?? "" }
             .bind(to: viewModel.roleTextPublishSubject)
             .disposed(by: disposeBag)
+
     }
 }
