@@ -9,19 +9,11 @@ import UIKit
 
 final class EmployeeListViewController: UIViewController {
 
-    private let localDataManager = LocalDataManager()
     var viewModel: EmployeeListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-
-        localDataManager.registerCompany(
-            userName: "Collabera",
-            email: "collabera@gmail.com",
-            password: "password")
-
-        print(localDataManager.fetchCompanies())
     }
 
     private func setupViews() {
@@ -38,9 +30,29 @@ final class EmployeeListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if isMovingFromParent {
+            print("viewDidDisappear isMovingFromParent")
+            viewModel.tappedLogout()
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParent {
+            print("viewWillDisappear isMovingFromParent")
+        }
+    }
+
+
     @objc
     private func tappedAddEmployeeButton() {
         viewModel.tappedAddEmployee()
+    }
+
+    deinit {
+        print("deinit from employee view controller")
     }
 
 }

@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '16.1'
+
+target 'Employee Information Management App' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Employee Information Management App
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+  target 'Employee Information Management AppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
