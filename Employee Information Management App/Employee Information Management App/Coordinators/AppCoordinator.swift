@@ -27,15 +27,15 @@ final class AppCoordinator: Coordinator {
 
     func start() {
         let navigationController = UINavigationController()
-//        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
+        let loginCoordinator = LoginCoordinator(navigationController: navigationController)
 
-//        childCoordinators.append(loginCoordinator)
-//        loginCoordinator.start()
+        childCoordinators.append(loginCoordinator)
+        loginCoordinator.start()
 
-        let employeeListCoordinator = EmployeeListCoordinator(navigationController: navigationController)
-
-        childCoordinators.append(employeeListCoordinator)
-        employeeListCoordinator.start()
+//        let employeeListCoordinator = EmployeeListCoordinator(navigationController: navigationController)
+//
+//        childCoordinators.append(employeeListCoordinator)
+//        employeeListCoordinator.start()
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

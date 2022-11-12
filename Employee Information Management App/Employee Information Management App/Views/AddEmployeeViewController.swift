@@ -8,6 +8,9 @@
 import UIKit
 
 final class AddEmployeeViewController: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
+    
     var viewModel: AddEmployeeViewModel!
 
     override func viewDidDisappear(_ animated: Bool) {
