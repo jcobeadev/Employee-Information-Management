@@ -1,0 +1,6 @@
+framework module Pods_Employee_Information_Management_App {
+  umbrella header "Pods-Employee Information Management App-umbrella.h"
+
+  export *
+  module * { export * }
+}
