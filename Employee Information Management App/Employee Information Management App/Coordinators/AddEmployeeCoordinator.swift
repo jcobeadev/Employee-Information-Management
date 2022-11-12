@@ -19,20 +19,26 @@ final class AddEmployeeCoordinator: Coordinator {
     }
 
     func start() {
-        // create add event view controller
+        // create add employee view controller
+        let modalNavigationController = UINavigationController()
         let addEmployeeViewController: AddEmployeeViewController = .instantiate()
+        modalNavigationController.setViewControllers([addEmployeeViewController], animated: false)
 
         // create add event view model
-        let addEmployeeViewModel = AddEmployeeViewModel()
+        let addEmployeeViewModel = AddEmployeeViewModel(dataManager: LocalDataManager())
         addEmployeeViewModel.coordinator = self
         addEmployeeViewController.viewModel = addEmployeeViewModel
 
         // present modally controller using navigation controller
-        navigationController.present(addEmployeeViewController, animated: true, completion: nil)
+        navigationController.present(modalNavigationController, animated: true, completion: nil)
     }
 
-    func didFinishAddEmployee() {
+    func didFinish() {
         parentCoordinator?.childDidFinish(self)
+    }
+
+    func didFinishSaveEvent() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 
     deinit {

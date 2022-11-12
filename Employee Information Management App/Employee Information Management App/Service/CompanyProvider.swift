@@ -19,7 +19,7 @@ final class CompanyProvider: PersistedCompanyProvider {
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return nil  }
             let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)
-            let company = companies.map { Company(userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}.first(where: { $0.isSelected == true }  )
+            let company = companies.map { Company(id: $0.id, userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}.first(where: { $0.isSelected == true }  )
             return company
         } catch {
             print(error)
