@@ -394,6 +394,11 @@
                             <constraint firstItem="UxV-C4-xzO" firstAttribute="leading" secondItem="njV-Yh-OH3" secondAttribute="leading" id="p37-ud-9Nf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="Mb3-Jh-Wqh" id="evw-fq-k0Y"/>
+                        <outlet property="lastNameTextField" destination="GtV-93-RoS" id="DD3-cj-5bA"/>
+                        <outlet property="roleTextField" destination="Au0-Pz-RmE" id="2Wz-LF-k4j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBW-tA-9wF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

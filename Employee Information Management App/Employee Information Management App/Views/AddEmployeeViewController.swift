@@ -11,6 +11,10 @@ final class AddEmployeeViewController: UIViewController {
     
     var viewModel: AddEmployeeViewModel!
 
+    @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var roleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
