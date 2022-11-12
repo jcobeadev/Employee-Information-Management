@@ -18,7 +18,7 @@ final class SignupManager: SignUpLocalDataManager {
 
     func signUp(userName: String, email: String, password: String, completion: @escaping SignUpResultCompletion) {
 
-        let company = Company(userName: userName, email: email, password: password, isSelected: true)
+        let company = Company(id: UUID().uuidString, userName: userName, email: email, password: password, isSelected: true)
 
         do {
             let companies = try fetchCompanies()
@@ -55,7 +55,7 @@ final class SignupManager: SignUpLocalDataManager {
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
             let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)
-            return companies.map { Company(userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}
+            return companies.map { Company(id: $0.id, userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}
         } catch {
             throw error
         }

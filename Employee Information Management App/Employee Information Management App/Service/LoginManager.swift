@@ -72,7 +72,7 @@ final class LoginDataManager: LoginLocalDataManager {
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
             let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)
-            return companies.map { Company(userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}
+            return companies.map { Company(id: $0.id, userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}
         } catch {
             throw error
         }
