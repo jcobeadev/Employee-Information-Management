@@ -179,23 +179,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8rg-br-CYU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxV-C4-xzO">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="njV-Yh-OH3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8rg-br-CYU" firstAttribute="leading" secondItem="njV-Yh-OH3" secondAttribute="leading" id="2R6-7L-7wc"/>
-                            <constraint firstItem="8rg-br-CYU" firstAttribute="top" secondItem="njV-Yh-OH3" secondAttribute="top" id="JkB-9g-53G"/>
-                            <constraint firstItem="njV-Yh-OH3" firstAttribute="bottom" secondItem="8rg-br-CYU" secondAttribute="bottom" id="cNn-U4-9Bo"/>
-                            <constraint firstItem="njV-Yh-OH3" firstAttribute="trailing" secondItem="8rg-br-CYU" secondAttribute="trailing" id="vqa-K8-bMm"/>
+                            <constraint firstItem="njV-Yh-OH3" firstAttribute="trailing" secondItem="UxV-C4-xzO" secondAttribute="trailing" id="6BH-J8-iF6"/>
+                            <constraint firstItem="UxV-C4-xzO" firstAttribute="top" secondItem="njV-Yh-OH3" secondAttribute="top" id="DyG-8s-9mO"/>
+                            <constraint firstItem="njV-Yh-OH3" firstAttribute="bottom" secondItem="UxV-C4-xzO" secondAttribute="bottom" id="b46-XT-LNC"/>
+                            <constraint firstItem="UxV-C4-xzO" firstAttribute="leading" secondItem="njV-Yh-OH3" secondAttribute="leading" id="p37-ud-9Nf"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="8rg-br-CYU" id="sWT-mK-Jdg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBW-tA-9wF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

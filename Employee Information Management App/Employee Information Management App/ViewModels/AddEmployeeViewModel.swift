@@ -9,6 +9,8 @@ import Foundation
 
 final class AddEmployeeViewModel {
 
+    let title = "Add"
+
     var coordinator: AddEmployeeCoordinator?
 
     func viewDidDisappear() {

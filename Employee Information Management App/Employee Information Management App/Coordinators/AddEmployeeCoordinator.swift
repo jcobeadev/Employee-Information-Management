@@ -20,7 +20,9 @@ final class AddEmployeeCoordinator: Coordinator {
 
     func start() {
         // create add event view controller
+        let modalNavigationController = UINavigationController()
         let addEmployeeViewController: AddEmployeeViewController = .instantiate()
+        modalNavigationController.setViewControllers([addEmployeeViewController], animated: false)
 
         // create add event view model
         let addEmployeeViewModel = AddEmployeeViewModel()
@@ -28,7 +30,7 @@ final class AddEmployeeCoordinator: Coordinator {
         addEmployeeViewController.viewModel = addEmployeeViewModel
 
         // present modally controller using navigation controller
-        navigationController.present(addEmployeeViewController, animated: true, completion: nil)
+        navigationController.present(modalNavigationController, animated: true, completion: nil)
     }
 
     func didFinishAddEmployee() {
