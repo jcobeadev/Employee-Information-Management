@@ -16,6 +16,8 @@
 		B186EFDE291F64B900BF8D52 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFDD291F64B900BF8D52 /* AppCoordinator.swift */; };
 		B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFDF291F67EE00BF8D52 /* LoginCoordinator.swift */; };
 		B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE2291F684F00BF8D52 /* LoginViewController.swift */; };
+		B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */; };
+		B186EFE7291F6A6B00BF8D52 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		B186EFDD291F64B900BF8D52 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B186EFDF291F67EE00BF8D52 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		B186EFE2291F684F00BF8D52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCoordinator.swift; sourceTree = "<group>"; };
+		B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			children = (
 				B186EFDD291F64B900BF8D52 /* AppCoordinator.swift */,
 				B186EFDF291F67EE00BF8D52 /* LoginCoordinator.swift */,
+				B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				B186EFE2291F684F00BF8D52 /* LoginViewController.swift */,
+				B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 			files = (
 				B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */,
 				B186EFDE291F64B900BF8D52 /* AppCoordinator.swift in Sources */,
+				B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */,
 				B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */,
+				B186EFE7291F6A6B00BF8D52 /* EmployeeListViewController.swift in Sources */,
 				B12279FE291F4D2B00E7E009 /* AppDelegate.swift in Sources */,
 				B1227A00291F4D2B00E7E009 /* SceneDelegate.swift in Sources */,
 			);
