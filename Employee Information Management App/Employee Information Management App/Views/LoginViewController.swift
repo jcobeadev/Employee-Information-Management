@@ -21,8 +21,15 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userNameTextField.becomeFirstResponder()
+        setupViews()
+        bind()
+    }
 
+    private func setupViews() {
+        userNameTextField.becomeFirstResponder()
+    }
+
+    private func bind() {
         userNameTextField
             .rx.text.map { $0 ?? "" }
             .bind(to: viewModel.userNameTextPublishSubject)

@@ -28,7 +28,6 @@ final class LoginViewModel {
     }
 
     func tappedSignUp() {
-        print("tapped sign up button")
         coordinator?.startSignUp()
     }
 
