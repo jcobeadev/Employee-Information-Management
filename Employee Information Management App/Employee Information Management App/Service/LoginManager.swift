@@ -30,6 +30,7 @@ protocol LoginLocalDataManager {
     typealias LoginResultCompletion = (LoginResult) -> Void
 
     func login(userName: String, password: String, completion: @escaping LoginResultCompletion)
+    func hasSession() -> Bool
 }
 
 final class LoginDataManager: LoginLocalDataManager {
@@ -52,6 +53,16 @@ final class LoginDataManager: LoginLocalDataManager {
             completion(.failure(error))
         }
 
+    }
+
+    func hasSession() -> Bool {
+        if let companies = try? fetchCompanies() {
+            for company in companies {
+                if company.isSelected == true { return true }
+            }
+            return false
+        }
+        return false
     }
 
     private func fetchCompanies() throws -> [Company] {

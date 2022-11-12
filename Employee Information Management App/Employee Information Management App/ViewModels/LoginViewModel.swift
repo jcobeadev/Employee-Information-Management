@@ -18,6 +18,13 @@ final class LoginViewModel {
 
     var coordinator: LoginCoordinator?
 
+    func viewDidLoad() {
+        if dataManager.hasSession() {
+            print("here")
+            coordinator?.startEmployeeLists()
+        }
+    }
+
     func isValid() -> Observable<Bool> {
         return Observable.combineLatest(
             userNameTextPublishSubject

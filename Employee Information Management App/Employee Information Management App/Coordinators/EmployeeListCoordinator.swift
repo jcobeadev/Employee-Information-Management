@@ -8,9 +8,11 @@
 import UIKit
 
 final class EmployeeListCoordinator: Coordinator {
-    private(set) var childCoordinators: [Coordinator] = []
 
+    private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
+
+    var parentCoordinator: LoginCoordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -21,7 +23,11 @@ final class EmployeeListCoordinator: Coordinator {
         let employeeListViewModel = EmployeeListViewModel()
         employeeListViewModel.coordinator = self
         employeeListViewController.viewModel = employeeListViewModel
-        navigationController.setViewControllers([employeeListViewController], animated: false)
+
+        UIView.performWithoutAnimation {
+            self.navigationController.show(employeeListViewController, sender: nil)
+        }
+
     }
 
     func startAddEmployee() {
@@ -40,5 +46,14 @@ final class EmployeeListCoordinator: Coordinator {
             }
         }
 
+    }
+
+    func didLogOut() {
+        parentCoordinator?.childDidFinish(self)
+        print("did logout coordinator")
+    }
+
+    deinit {
+        print("deinit from employee list coordinator")
     }
 }

@@ -32,6 +32,14 @@ final class LoginCoordinator: Coordinator {
         signUpCoordinator.start()
     }
 
+    // MARK: - Employee Lists
+    func startEmployeeLists() {
+        let employeeListsCoordinator = EmployeeListCoordinator(navigationController: navigationController)
+        employeeListsCoordinator.parentCoordinator = self
+        childCoordinators.append(employeeListsCoordinator)
+        employeeListsCoordinator.start()
+    }
+
     func childDidFinish(_ childCoordinator: Coordinator) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === childCoordinator {

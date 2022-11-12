@@ -17,4 +17,13 @@ final class EmployeeListViewModel {
          coordinator?.startAddEmployee()
     }
 
+    func tappedLogout() {
+        coordinator?.didLogOut()
+        print("did logout view model")
+    }
+
+    deinit {
+        print("deinit from employee list view model")
+    }
+
 }

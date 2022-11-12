@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.viewDidLoad()
         setupViews()
         bind()
     }
