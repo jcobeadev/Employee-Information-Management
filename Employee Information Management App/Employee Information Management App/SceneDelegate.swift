@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             let companiesSubURL = documentDirectory.appendingPathComponent("Companies.json")
             let employeesSubURL = documentDirectory.appendingPathComponent("Employees.json")
+            print(companiesSubURL)
 
             createFileIfDoesNotExist(url: companiesSubURL)
             createFileIfDoesNotExist(url: employeesSubURL)

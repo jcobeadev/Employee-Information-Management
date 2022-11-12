@@ -7,24 +7,6 @@
 
 import Foundation
 
-/*
-struct PersistableEmployee: Codable {
-    let id: String
-    let first_name: String
-    let last_name: String
-    let role: String
-    let resigned: Bool
-}
-
-struct Employee {
-    let id: UUID
-    let first_name: String
-    let last_name: String
-    let role: String
-    let resigned: Bool
-}
-*/
-
 protocol LoginLocalDataManager {
     typealias LoginResult = Swift.Result<Company, Error>
     typealias LoginResultCompletion = (LoginResult) -> Void
