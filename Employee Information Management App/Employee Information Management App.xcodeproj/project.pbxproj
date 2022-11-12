@@ -24,13 +24,6 @@
 			remoteGlobalIDString = B12279F9291F4D2B00E7E009;
 			remoteInfo = "Employee Information Management App";
 		};
-		B1227A1B291F4D2E00E7E009 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B12279F2291F4D2B00E7E009 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B12279F9291F4D2B00E7E009;
-			remoteInfo = "Employee Information Management App";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +37,6 @@
 		B1227A0B291F4D2E00E7E009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1227A10291F4D2E00E7E009 /* Employee Information Management AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee Information Management AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1227A14291F4D2E00E7E009 /* Employee_Information_Management_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_Information_Management_AppTests.swift; sourceTree = "<group>"; };
-		B1227A1A291F4D2E00E7E009 /* Employee Information Management AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee Information Management AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +48,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B1227A0D291F4D2E00E7E009 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B1227A17291F4D2E00E7E009 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +71,6 @@
 			children = (
 				B12279FA291F4D2B00E7E009 /* Employee Information Management App.app */,
 				B1227A10291F4D2E00E7E009 /* Employee Information Management AppTests.xctest */,
-				B1227A1A291F4D2E00E7E009 /* Employee Information Management AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,24 +135,6 @@
 			productReference = B1227A10291F4D2E00E7E009 /* Employee Information Management AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B1227A19291F4D2E00E7E009 /* Employee Information Management AppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B1227A2A291F4D2E00E7E009 /* Build configuration list for PBXNativeTarget "Employee Information Management AppUITests" */;
-			buildPhases = (
-				B1227A16291F4D2E00E7E009 /* Sources */,
-				B1227A17291F4D2E00E7E009 /* Frameworks */,
-				B1227A18291F4D2E00E7E009 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B1227A1C291F4D2E00E7E009 /* PBXTargetDependency */,
-			);
-			name = "Employee Information Management AppUITests";
-			productName = "Employee Information Management AppUITests";
-			productReference = B1227A1A291F4D2E00E7E009 /* Employee Information Management AppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,10 +149,6 @@
 						CreatedOnToolsVersion = 14.1;
 					};
 					B1227A0F291F4D2E00E7E009 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = B12279F9291F4D2B00E7E009;
-					};
-					B1227A19291F4D2E00E7E009 = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = B12279F9291F4D2B00E7E009;
 					};
@@ -207,7 +169,6 @@
 			targets = (
 				B12279F9291F4D2B00E7E009 /* Employee Information Management App */,
 				B1227A0F291F4D2E00E7E009 /* Employee Information Management AppTests */,
-				B1227A19291F4D2E00E7E009 /* Employee Information Management AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +185,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B1227A0E291F4D2E00E7E009 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B1227A18291F4D2E00E7E009 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,13 +212,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1227A16291F4D2E00E7E009 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -272,11 +219,6 @@
 			isa = PBXTargetDependency;
 			target = B12279F9291F4D2B00E7E009 /* Employee Information Management App */;
 			targetProxy = B1227A11291F4D2E00E7E009 /* PBXContainerItemProxy */;
-		};
-		B1227A1C291F4D2E00E7E009 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B12279F9291F4D2B00E7E009 /* Employee Information Management App */;
-			targetProxy = B1227A1B291F4D2E00E7E009 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -510,42 +452,6 @@
 			};
 			name = Release;
 		};
-		B1227A2B291F4D2E00E7E009 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM6AGMYVBS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nueca.Employee-Information-Management-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Employee Information Management App";
-			};
-			name = Debug;
-		};
-		B1227A2C291F4D2E00E7E009 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM6AGMYVBS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nueca.Employee-Information-Management-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Employee Information Management App";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,15 +478,6 @@
 			buildConfigurations = (
 				B1227A28291F4D2E00E7E009 /* Debug */,
 				B1227A29291F4D2E00E7E009 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B1227A2A291F4D2E00E7E009 /* Build configuration list for PBXNativeTarget "Employee Information Management AppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B1227A2B291F4D2E00E7E009 /* Debug */,
-				B1227A2C291F4D2E00E7E009 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
