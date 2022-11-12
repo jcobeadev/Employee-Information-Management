@@ -5,9 +5,14 @@
 //  Created by Jayco Bea on 11/12/22.
 //
 
-import Foundation
+import RxSwift
 
 final class SignUpViewModel {
+
+    let userNameTextPublishSubject = PublishSubject<String>()
+    let emailTextPublishSubject = PublishSubject<String>()
+    let passwordTextPublishSubject = PublishSubject<String>()
+    let confirmPasswordTextPublishSubject = PublishSubject<String>()
 
     var coordinator: SignUpCoordinator?
 
