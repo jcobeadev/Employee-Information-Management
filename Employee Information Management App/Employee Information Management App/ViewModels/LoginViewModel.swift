@@ -14,7 +14,11 @@ final class LoginViewModel {
 
     let userNameTextPublishSubject = PublishSubject<String>()
     let passwordTextPublishSubject = PublishSubject<String>()
-    let dataManager = LoginDataManager()
+    let dataManager: LoginLocalDataManager
+
+    init(dataManager: LoginLocalDataManager) {
+        self.dataManager = dataManager
+    }
 
     var coordinator: LoginCoordinator?
 

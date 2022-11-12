@@ -18,7 +18,7 @@ final class LoginCoordinator: Coordinator {
 
     func start() {
         let loginViewController: LoginViewController = .instantiate()
-        let loginViewModel = LoginViewModel()
+        let loginViewModel = LoginViewModel(dataManager: LocalDataManager())
         loginViewModel.coordinator = self
         loginViewController.viewModel = loginViewModel
         navigationController.setViewControllers([loginViewController], animated: false)

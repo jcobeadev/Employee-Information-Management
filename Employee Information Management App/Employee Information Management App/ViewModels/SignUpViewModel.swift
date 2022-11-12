@@ -48,13 +48,17 @@ final class SignUpViewModel {
     let passwordTextPublishSubject = PublishSubject<String>()
     let confirmPasswordTextPublishSubject = PublishSubject<String>()
 
-    let dataManager: SignUpLocalDataManager = SignupManager()
+    let dataManager: SignUpLocalDataManager
 
     let disposeBag = DisposeBag()
 
     var error: SignUpError?
-
     var coordinator: SignUpCoordinator?
+
+    init(dataManager: SignUpLocalDataManager) {
+        self.dataManager = dataManager
+    }
+
 
     func isFormvalid() -> Observable<Bool> {
 

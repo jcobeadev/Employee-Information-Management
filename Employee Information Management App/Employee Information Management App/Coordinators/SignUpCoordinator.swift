@@ -20,7 +20,7 @@ final class SignUpCoordinator: Coordinator {
 
     func start() {
         let signUpViewController: SignUpViewController = .instantiate()
-        let signUpViewModel = SignUpViewModel()
+        let signUpViewModel = SignUpViewModel(dataManager: LocalDataManager())
         signUpViewModel.coordinator = self
         signUpViewController.viewModel = signUpViewModel
 
