@@ -32,6 +32,7 @@
 		B186F002291F9D2700BF8D52 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F001291F9D2700BF8D52 /* SignUpViewController.swift */; };
 		B186F004291F9E2D00BF8D52 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */; };
 		B186F007291FB7EC00BF8D52 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F006291FB7EC00BF8D52 /* SignUpManager.swift */; };
+		B186F009291FB88E00BF8D52 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F008291FB88E00BF8D52 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		B186F001291F9D2700BF8D52 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		B186F006291FB7EC00BF8D52 /* SignUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
+		B186F008291FB88E00BF8D52 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		D4FF0EE82D2472C4B6B97E72 /* Pods_Employee_Information_Management_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_Information_Management_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E510576688679BD0C35D3789 /* Pods-Employee Information Management AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.release.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F10F0A630062B46186FA5448 /* Pods-Employee Information Management AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				B186F006291FB7EC00BF8D52 /* SignUpManager.swift */,
+				B186F008291FB88E00BF8D52 /* LoginManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */,
 				B186EFDE291F64B900BF8D52 /* AppCoordinator.swift in Sources */,
 				B186EFFE291F963600BF8D52 /* LoginViewModel.swift in Sources */,
+				B186F009291FB88E00BF8D52 /* LoginManager.swift in Sources */,
 				B186F004291F9E2D00BF8D52 /* SignUpViewModel.swift in Sources */,
 				B186F002291F9D2700BF8D52 /* SignUpViewController.swift in Sources */,
 				B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */,
