@@ -8,7 +8,7 @@
 import Foundation
 
 struct PersitableCompany: Codable {
-    var id: String = UUID().uuidString
+    var id: String
     let user_name: String
     let email: String
     let password: String

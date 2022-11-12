@@ -107,6 +107,16 @@ extension LocalDataManager: LoginLocalDataManager {
             print(userName, password)
 
             if let company = companies.first(where: { $0.userName == userName && $0.password == password }) {
+
+                var arr = [Company]()
+                for var object in companies {
+                    object.isSelected = false
+                    if object.id == company.id { object.isSelected = true }
+                    arr.append(object)
+                }
+
+                try writeData(companies: arr.map { PersitableCompany(id: $0.id, user_name: $0.userName, email: $0.email, password: $0.password, is_selected: $0.isSelected)})
+
                 completion(.success(company))
             } else {
                 let error = NSError(domain: "Company does not exists. Please sign up.", code: 9999, userInfo: nil)
@@ -146,10 +156,10 @@ extension LocalDataManager: SignUpLocalDataManager {
                 completion(.failure(error))
             } else {
 
-                var persistableCompanies = companies.map { PersitableCompany(user_name: $0.userName, email: $0.email, password: $0.password, is_selected: false)}
+                var persistableCompanies = companies.map { PersitableCompany(id: $0.id, user_name: $0.userName, email: $0.email, password: $0.password, is_selected: false)}
 
                 // select new signed up company
-                let persistableCompany = PersitableCompany(user_name: company.userName, email: company.email, password: company.password, is_selected: true)
+                let persistableCompany = PersitableCompany(id: UUID().uuidString, user_name: company.userName, email: company.email, password: company.password, is_selected: true)
 
                 persistableCompanies.append(persistableCompany)
 
@@ -164,3 +174,6 @@ extension LocalDataManager: SignUpLocalDataManager {
 
     }
 }
+
+// CE629083ED8C
+// AC75C1255960
