@@ -17,6 +17,7 @@ final class AddEmployeeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.title
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(tappedCancel))
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -31,5 +32,10 @@ final class AddEmployeeViewController: UIViewController {
     @objc
     private func tappedDone() {
         print("tapped done.")
+    }
+
+    @objc
+    private func tappedCancel() {
+        dismiss(animated: true)
     }
 }
