@@ -33,6 +33,8 @@
 		B186F004291F9E2D00BF8D52 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */; };
 		B186F007291FB7EC00BF8D52 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F006291FB7EC00BF8D52 /* SignUpManager.swift */; };
 		B186F009291FB88E00BF8D52 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F008291FB88E00BF8D52 /* LoginManager.swift */; };
+		B186F00B291FCC5600BF8D52 /* CompanyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F00A291FCC5600BF8D52 /* CompanyProvider.swift */; };
+		B186F00D291FCD4900BF8D52 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F00C291FCD4900BF8D52 /* Company.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,8 @@
 		B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		B186F006291FB7EC00BF8D52 /* SignUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
 		B186F008291FB88E00BF8D52 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		B186F00A291FCC5600BF8D52 /* CompanyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CompanyProvider.swift; path = ../../../../../../CompanyProvider.swift; sourceTree = "<group>"; };
+		B186F00C291FCD4900BF8D52 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Company.swift; path = "../../../../../../../.Trash/Employee-Information-Management 20-12-09-775/Employee Information Management App/Employee Information Management App/Models/Company.swift"; sourceTree = "<group>"; };
 		D4FF0EE82D2472C4B6B97E72 /* Pods_Employee_Information_Management_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_Information_Management_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E510576688679BD0C35D3789 /* Pods-Employee Information Management AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.release.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F10F0A630062B46186FA5448 /* Pods-Employee Information Management AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,9 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				B186EFE2291F684F00BF8D52 /* LoginViewController.swift */,
+				B186F001291F9D2700BF8D52 /* SignUpViewController.swift */,
 				B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */,
 				B186EFF7291F75D800BF8D52 /* AddEmployeeViewController.swift */,
-				B186F001291F9D2700BF8D52 /* SignUpViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */,
+				B186F00C291FCD4900BF8D52 /* Company.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,9 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				B186EFFD291F963600BF8D52 /* LoginViewModel.swift */,
+				B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */,
 				B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */,
 				B186EFFB291F772A00BF8D52 /* AddEmployeeViewModel.swift */,
-				B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 		B186F005291FB7D600BF8D52 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B186F00A291FCC5600BF8D52 /* CompanyProvider.swift */,
 				B186F006291FB7EC00BF8D52 /* SignUpManager.swift */,
 				B186F008291FB88E00BF8D52 /* LoginManager.swift */,
 			);
@@ -403,7 +409,9 @@
 				B186EFFE291F963600BF8D52 /* LoginViewModel.swift in Sources */,
 				B186F009291FB88E00BF8D52 /* LoginManager.swift in Sources */,
 				B186F004291F9E2D00BF8D52 /* SignUpViewModel.swift in Sources */,
+				B186F00D291FCD4900BF8D52 /* Company.swift in Sources */,
 				B186F002291F9D2700BF8D52 /* SignUpViewController.swift in Sources */,
+				B186F00B291FCC5600BF8D52 /* CompanyProvider.swift in Sources */,
 				B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */,
 				B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */,
 				B186F000291F9C3500BF8D52 /* SignUpCoordinator.swift in Sources */,
