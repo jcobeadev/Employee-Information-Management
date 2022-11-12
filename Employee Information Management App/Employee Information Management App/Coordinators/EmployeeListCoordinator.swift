@@ -20,7 +20,7 @@ final class EmployeeListCoordinator: Coordinator {
 
     func start() {
         let employeeListViewController: EmployeeListViewController = .instantiate()
-        let employeeListViewModel = EmployeeListViewModel()
+        let employeeListViewModel = EmployeeListViewModel(dataManager: LocalDataManager())
         employeeListViewModel.coordinator = self
         employeeListViewController.viewModel = employeeListViewModel
 

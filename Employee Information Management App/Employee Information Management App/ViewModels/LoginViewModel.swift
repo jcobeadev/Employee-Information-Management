@@ -24,7 +24,6 @@ final class LoginViewModel {
 
     func viewDidLoad() {
         if dataManager.hasSession() {
-            print("here")
             coordinator?.startEmployeeLists()
         }
     }

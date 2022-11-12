@@ -43,7 +43,7 @@ final class LocalDataManager {
         }
     }
 
-    private func fetchEmployees() throws -> [Employee] {
+    func fetchEmployees() throws -> [Employee] {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
             let url = documentDirectory.appendingPathComponent("Employees.json")
@@ -174,6 +174,3 @@ extension LocalDataManager: SignUpLocalDataManager {
 
     }
 }
-
-// CE629083ED8C
-// AC75C1255960

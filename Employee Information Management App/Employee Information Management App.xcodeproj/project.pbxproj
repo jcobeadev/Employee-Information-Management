@@ -39,6 +39,7 @@
 		B186F015291FDC8B00BF8D52 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F014291FDC8B00BF8D52 /* LocalDataManager.swift */; };
 		B18E06DE291FF04C00D0887E /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E06DD291FF04C00D0887E /* Company.swift */; };
 		B18E06E0291FF1E300D0887E /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E06DF291FF1E300D0887E /* EmployeeCell.swift */; };
+		B18E06E3291FFCB500D0887E /* EmployeeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E06E2291FFCB500D0887E /* EmployeeCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		B186F014291FDC8B00BF8D52 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		B18E06DD291FF04C00D0887E /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		B18E06DF291FF1E300D0887E /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
+		B18E06E2291FFCB500D0887E /* EmployeeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCellViewModel.swift; sourceTree = "<group>"; };
 		D4FF0EE82D2472C4B6B97E72 /* Pods_Employee_Information_Management_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_Information_Management_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E510576688679BD0C35D3789 /* Pods-Employee Information Management AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.release.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F10F0A630062B46186FA5448 /* Pods-Employee Information Management AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */,
 				B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */,
 				B186EFFB291F772A00BF8D52 /* AddEmployeeViewModel.swift */,
+				B18E06E2291FFCB500D0887E /* EmployeeCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				B186F013291FD09800BF8D52 /* Employee.swift in Sources */,
 				B186EFF8291F75D800BF8D52 /* AddEmployeeViewController.swift in Sources */,
 				B186F015291FDC8B00BF8D52 /* LocalDataManager.swift in Sources */,
+				B18E06E3291FFCB500D0887E /* EmployeeCellViewModel.swift in Sources */,
 				B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */,
 				B186EFDE291F64B900BF8D52 /* AppCoordinator.swift in Sources */,
 				B186EFFE291F963600BF8D52 /* LoginViewModel.swift in Sources */,

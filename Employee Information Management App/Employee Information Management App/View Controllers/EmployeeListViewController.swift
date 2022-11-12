@@ -9,10 +9,13 @@ import UIKit
 
 final class EmployeeListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+
     var viewModel: EmployeeListViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         setupViews()
     }
 
@@ -55,4 +58,23 @@ final class EmployeeListViewController: UIViewController {
         print("deinit from employee view controller")
     }
 
+}
+
+extension EmployeeListViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numOfRows()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
+        cell.update(with: viewModel.cellViewModel(at: indexPath))
+        return cell
+    }
+
+}
+extension EmployeeListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
