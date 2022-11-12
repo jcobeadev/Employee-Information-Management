@@ -9,6 +9,9 @@ import UIKit
 
 final class EmployeeListViewController: UIViewController {
 
+    private let localDataManager = LocalDataManager()
+    var viewModel: EmployeeListViewModel!
+
     static func instantiate() -> EmployeeListViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let controller = storyboard.instantiateViewController(withIdentifier: "EmployeeListViewController") as! EmployeeListViewController
@@ -18,25 +21,32 @@ final class EmployeeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+
+        localDataManager.registerCompany(
+            userName: "Collabera",
+            email: "collabera@gmail.com",
+            password: "password")
+
+        print(localDataManager.fetchCompanies())
     }
 
     private func setupViews() {
-        let plusImage = UIImage(named: "plus.circle")
+        let plusImage = UIImage(systemName: "plus.circle.fill")
         let barButtonItem = UIBarButtonItem(
             image: plusImage,
             style: .plain,
             target: self,
-            action: #selector(tappedRightBarButton)
+            action: #selector(tappedAddEmployeeButton)
         )
+        barButtonItem.tintColor = .primary
         navigationItem.rightBarButtonItem = barButtonItem
-        #warning("Add property to view model")
-        navigationItem.title = "Employees"
+        navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     @objc
-    private func tappedRightBarButton() {
-        print("bar button item is tapped.")
+    private func tappedAddEmployeeButton() {
+        viewModel.tappedAddEmployee()
     }
 
 }
