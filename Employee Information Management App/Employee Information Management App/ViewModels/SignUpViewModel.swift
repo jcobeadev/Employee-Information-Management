@@ -49,18 +49,23 @@ final class SignupManager: SignUpLocalDataManager {
 
     func signUp(userName: String, email: String, password: String, completion: @escaping SignUpResultCompletion) {
 
-        let company = Company(userName: userName, email: email, password: password)
+        let company = Company(userName: userName, email: email, password: password, isSelected: true)
 
         do {
-            var companies = try fetchCompanies()
+            let companies = try fetchCompanies()
 
             // already exists
             if companies.contains(where: {$0.email == company.email }) {
                 let error = NSError(domain: "Company already exists", code: 9999)
                 completion(.failure(error))
             } else {
-                companies.append(company)
-                let persistableCompanies = companies.map { PersitableCompany(user_name: $0.userName, email: $0.email, password: $0.password)}
+
+                var persistableCompanies = companies.map { PersitableCompany(user_name: $0.userName, email: $0.email, password: $0.password, is_selected: false)}
+
+                // select new signed up company
+                let persistableCompany = PersitableCompany(user_name: company.userName, email: company.email, password: company.password, is_selected: true)
+
+                persistableCompanies.append(persistableCompany)
 
                 try writeData(companies: persistableCompanies)
 
@@ -81,7 +86,7 @@ final class SignupManager: SignUpLocalDataManager {
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
             let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)
-            return companies.map { Company(userName: $0.user_name, email: $0.email, password: $0.password)}
+            return companies.map { Company(userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}
         } catch {
             throw error
         }
