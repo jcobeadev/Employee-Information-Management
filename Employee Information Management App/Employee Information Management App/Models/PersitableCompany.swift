@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PersitableCompany {
+struct PersitableCompany: Codable {
     let user_name: String
     let email: String
     let password: String

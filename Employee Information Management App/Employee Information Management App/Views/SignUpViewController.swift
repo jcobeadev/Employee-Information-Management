@@ -50,6 +50,8 @@ final class SignUpViewController: UIViewController {
             .rx.text.map { $0 ?? "" }
             .bind(to: viewModel.confirmPasswordTextPublishSubject)
             .disposed(by: disposeBag)
+
+        viewModel.isFormvalid().bind(to: signUpButton.rx.isEnabled).disposed(by: disposeBag)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -62,7 +64,7 @@ final class SignUpViewController: UIViewController {
     }
 
     @IBAction func tappedSignUpButton(_ sender: UIButton) {
-
+        viewModel.signUp()
     }
 
 }

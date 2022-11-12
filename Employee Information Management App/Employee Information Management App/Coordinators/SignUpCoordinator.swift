@@ -35,5 +35,4 @@ final class SignUpCoordinator: Coordinator {
         print("deinit from sign up coordinator")
     }
 
-
 }
