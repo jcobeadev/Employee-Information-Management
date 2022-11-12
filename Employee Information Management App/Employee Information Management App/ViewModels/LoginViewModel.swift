@@ -9,8 +9,8 @@ import RxSwift
 
 final class LoginViewModel {
 
-    var userName = ""
-    var password = ""
+    private var userName = ""
+    private var password = ""
 
     let userNameTextPublishSubject = PublishSubject<String>()
     let passwordTextPublishSubject = PublishSubject<String>()
