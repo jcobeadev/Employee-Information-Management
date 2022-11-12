@@ -18,6 +18,10 @@
 		B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE2291F684F00BF8D52 /* LoginViewController.swift */; };
 		B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */; };
 		B186EFE7291F6A6B00BF8D52 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */; };
+		B186EFEA291F6C5D00BF8D52 /* PersitableCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */; };
+		B186EFEC291F6CD400BF8D52 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFEB291F6CD400BF8D52 /* LocalDataManager.swift */; };
+		B186EFEF291F6F9600BF8D52 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */; };
+		B186EFF2291F72A400BF8D52 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFF1291F72A400BF8D52 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		B186EFE2291F684F00BF8D52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCoordinator.swift; sourceTree = "<group>"; };
 		B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
+		B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersitableCompany.swift; sourceTree = "<group>"; };
+		B186EFEB291F6CD400BF8D52 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		B186EFF1291F72A400BF8D52 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,9 @@
 		B12279FC291F4D2B00E7E009 /* Employee Information Management App */ = {
 			isa = PBXGroup;
 			children = (
+				B186EFF0291F729B00BF8D52 /* Extensions */,
+				B186EFED291F6F8700BF8D52 /* ViewModels */,
+				B186EFE8291F6C2700BF8D52 /* Models */,
 				B186EFE1291F684700BF8D52 /* Views */,
 				B186EFDC291F64AB00BF8D52 /* Coordinators */,
 				B12279FD291F4D2B00E7E009 /* AppDelegate.swift */,
@@ -94,6 +105,7 @@
 				B1227A06291F4D2E00E7E009 /* Assets.xcassets */,
 				B1227A08291F4D2E00E7E009 /* LaunchScreen.storyboard */,
 				B1227A0B291F4D2E00E7E009 /* Info.plist */,
+				B186EFEB291F6CD400BF8D52 /* LocalDataManager.swift */,
 			);
 			path = "Employee Information Management App";
 			sourceTree = "<group>";
@@ -123,6 +135,30 @@
 				B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B186EFE8291F6C2700BF8D52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B186EFED291F6F8700BF8D52 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B186EFF0291F729B00BF8D52 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B186EFF1291F72A400BF8D52 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +264,13 @@
 			files = (
 				B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */,
 				B186EFDE291F64B900BF8D52 /* AppCoordinator.swift in Sources */,
+				B186EFEC291F6CD400BF8D52 /* LocalDataManager.swift in Sources */,
 				B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */,
 				B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */,
+				B186EFEA291F6C5D00BF8D52 /* PersitableCompany.swift in Sources */,
+				B186EFEF291F6F9600BF8D52 /* EmployeeListViewModel.swift in Sources */,
 				B186EFE7291F6A6B00BF8D52 /* EmployeeListViewController.swift in Sources */,
+				B186EFF2291F72A400BF8D52 /* UIColor+Extensions.swift in Sources */,
 				B12279FE291F4D2B00E7E009 /* AppDelegate.swift in Sources */,
 				B1227A00291F4D2B00E7E009 /* SceneDelegate.swift in Sources */,
 			);
