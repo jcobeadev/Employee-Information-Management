@@ -15,8 +15,4 @@ final class LoginViewController: UIViewController {
         return controller
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 }
