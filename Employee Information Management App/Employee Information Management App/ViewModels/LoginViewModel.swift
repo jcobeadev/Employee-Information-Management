@@ -12,6 +12,8 @@ final class LoginViewModel {
     let userNameTextPublishSubject = PublishSubject<String>()
     let passwordTextPublishSubject = PublishSubject<String>()
 
+    var coordinator: LoginCoordinator?
+
     func isValid() -> Observable<Bool> {
         return Observable.combineLatest(
             userNameTextPublishSubject
@@ -23,6 +25,11 @@ final class LoginViewModel {
             .map { username, password in
                 return username.count > 3 && password.count > 3
             }.startWith(false)
+    }
+
+    func tappedSignUp() {
+        print("tapped sign up button")
+        coordinator?.startSignUp()
     }
 
 }

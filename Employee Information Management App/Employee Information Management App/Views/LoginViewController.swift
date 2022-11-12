@@ -41,7 +41,7 @@ final class LoginViewController: UIViewController {
         print("tapped login button")
     }
 
-    @IBAction func tappedSignUpButton(_ sender: UIButton) {
-        print("tapped sign up button")
+    @IBAction func tappedSignUpButton(_ sender: UIButton) {        
+        viewModel.tappedSignUp()
     }
 }
