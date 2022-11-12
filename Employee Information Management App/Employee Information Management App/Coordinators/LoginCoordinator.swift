@@ -33,8 +33,8 @@ final class LoginCoordinator: Coordinator {
     }
 
     // MARK: - Employee Lists
-    func startEmployeeLists() {
-        let employeeListsCoordinator = EmployeeListCoordinator(navigationController: navigationController)
+    func startEmployeeLists(animated: Bool) {
+        let employeeListsCoordinator = EmployeeListCoordinator(navigationController: navigationController, animated: animated)
         employeeListsCoordinator.parentCoordinator = self
         childCoordinators.append(employeeListsCoordinator)
         employeeListsCoordinator.start()

@@ -88,14 +88,15 @@ final class SignUpViewModel {
     }
 
     func viewDidDisappear() {
-        coordinator?.didFinishSignUp()
+        coordinator?.didFinish()
     }
 
     func signUp() {
-        self.dataManager.signUp(userName: userName, email: email, password: password){ result in
+        self.dataManager.signUp(userName: userName, email: email, password: password){ [weak self] result in
             switch result {
             case let .success(company):
                 print("signUp", company)
+                self?.coordinator?.didFinishSignUp()
             case let .failure(error):
                 print("signUp", error)
             }

@@ -24,7 +24,7 @@ final class LoginViewModel {
 
     func viewDidLoad() {
         if dataManager.hasSession() {
-            coordinator?.startEmployeeLists()
+            coordinator?.startEmployeeLists(animated: false)
         }
     }
 
@@ -44,10 +44,11 @@ final class LoginViewModel {
     }
 
     func tappedLogin() {
-        dataManager.login(userName: userName, password: password) { result in
+        dataManager.login(userName: userName, password: password) { [weak self] result in
             switch result {
             case let .success(company):
                 print("company", company)
+                self?.coordinator?.startEmployeeLists(animated: true)
             case let .failure(error):
                 print("error", error)
             }

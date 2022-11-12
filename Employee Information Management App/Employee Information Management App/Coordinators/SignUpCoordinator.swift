@@ -27,8 +27,15 @@ final class SignUpCoordinator: Coordinator {
         navigationController.present(signUpViewController, animated: true, completion: nil)
     }
 
-    func didFinishSignUp() {
+    func didFinish() {
         parentCoordinator?.childDidFinish(self)
+    }
+
+    func didFinishSignUp() {
+        didFinish()
+        navigationController.dismiss(animated: true) {
+            self.parentCoordinator?.startEmployeeLists(animated: true)
+        }
     }
 
     deinit {

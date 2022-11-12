@@ -10,12 +10,15 @@ import UIKit
 final class EmployeeListCoordinator: Coordinator {
 
     private(set) var childCoordinators: [Coordinator] = []
+
     private let navigationController: UINavigationController
 
     var parentCoordinator: LoginCoordinator?
+    let animated: Bool
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, animated: Bool) {
         self.navigationController = navigationController
+        self.animated = animated
     }
 
     func start() {
@@ -24,8 +27,12 @@ final class EmployeeListCoordinator: Coordinator {
         employeeListViewModel.coordinator = self
         employeeListViewController.viewModel = employeeListViewModel
 
-        UIView.performWithoutAnimation {
+        if animated {
             self.navigationController.show(employeeListViewController, sender: nil)
+        } else {
+            UIView.performWithoutAnimation {
+                self.navigationController.show(employeeListViewController, sender: nil)
+            }
         }
 
     }
