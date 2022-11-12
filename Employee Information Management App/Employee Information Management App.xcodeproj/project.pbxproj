@@ -33,11 +33,11 @@
 		B186F004291F9E2D00BF8D52 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */; };
 		B186F007291FB7EC00BF8D52 /* SignUpLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F006291FB7EC00BF8D52 /* SignUpLocalDataManager.swift */; };
 		B186F009291FB88E00BF8D52 /* LoginLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F008291FB88E00BF8D52 /* LoginLocalDataManager.swift */; };
-		B186F00D291FCD4900BF8D52 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F00C291FCD4900BF8D52 /* Company.swift */; };
 		B186F00F291FCDCF00BF8D52 /* CompanyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F00E291FCDCF00BF8D52 /* CompanyProvider.swift */; };
 		B186F011291FD06700BF8D52 /* PersistableEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F010291FD06700BF8D52 /* PersistableEmployee.swift */; };
 		B186F013291FD09800BF8D52 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F012291FD09800BF8D52 /* Employee.swift */; };
 		B186F015291FDC8B00BF8D52 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186F014291FDC8B00BF8D52 /* LocalDataManager.swift */; };
+		B18E06DE291FF04C00D0887E /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E06DD291FF04C00D0887E /* Company.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +81,11 @@
 		B186F003291F9E2C00BF8D52 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		B186F006291FB7EC00BF8D52 /* SignUpLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLocalDataManager.swift; sourceTree = "<group>"; };
 		B186F008291FB88E00BF8D52 /* LoginLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLocalDataManager.swift; sourceTree = "<group>"; };
-		B186F00C291FCD4900BF8D52 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Company.swift; path = "../../../../../../../.Trash/Employee-Information-Management 20-12-09-775/Employee Information Management App/Employee Information Management App/Models/Company.swift"; sourceTree = "<group>"; };
 		B186F00E291FCDCF00BF8D52 /* CompanyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProvider.swift; sourceTree = "<group>"; };
 		B186F010291FD06700BF8D52 /* PersistableEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableEmployee.swift; sourceTree = "<group>"; };
 		B186F012291FD09800BF8D52 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		B186F014291FDC8B00BF8D52 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		B18E06DD291FF04C00D0887E /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		D4FF0EE82D2472C4B6B97E72 /* Pods_Employee_Information_Management_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_Information_Management_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E510576688679BD0C35D3789 /* Pods-Employee Information Management AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.release.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F10F0A630062B46186FA5448 /* Pods-Employee Information Management AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Information Management AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Employee Information Management AppTests/Pods-Employee Information Management AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,9 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */,
-				B186F00C291FCD4900BF8D52 /* Company.swift */,
 				B186F010291FD06700BF8D52 /* PersistableEmployee.swift */,
 				B186F012291FD09800BF8D52 /* Employee.swift */,
+				B18E06DD291FF04C00D0887E /* Company.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 				B186F011291FD06700BF8D52 /* PersistableEmployee.swift in Sources */,
 				B186F009291FB88E00BF8D52 /* LoginLocalDataManager.swift in Sources */,
 				B186F004291F9E2D00BF8D52 /* SignUpViewModel.swift in Sources */,
-				B186F00D291FCD4900BF8D52 /* Company.swift in Sources */,
+				B18E06DE291FF04C00D0887E /* Company.swift in Sources */,
 				B186F002291F9D2700BF8D52 /* SignUpViewController.swift in Sources */,
 				B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */,
 				B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */,
