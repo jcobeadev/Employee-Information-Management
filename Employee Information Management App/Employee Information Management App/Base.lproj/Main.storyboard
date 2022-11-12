@@ -79,6 +79,9 @@
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                                                <connections>
+                                                                    <action selector="tappedLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zfy-k7-Pkf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,6 +103,9 @@
                                                                 <color key="tintColor" systemColor="tintColor"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                                                <connections>
+                                                                    <action selector="tappedSignUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L76-l3-A2v"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -140,6 +146,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v53-cu-0VY" secondAttribute="trailing" id="pSm-9W-hNW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="IfO-4U-m3N" id="oJa-5d-Yia"/>
+                        <outlet property="passwordTextField" destination="Rmj-AH-X7D" id="OAg-JO-m9Q"/>
+                        <outlet property="userNameTextField" destination="o4L-j7-fE0" id="1Wx-FA-LVp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
