@@ -25,9 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func createJSONIfDoesNotExist() {
         do {
-            let documentDirectory = try FileManager.default.url(for: .documentDirectory,
-                                                            in: .userDomainMask,
-                                                            appropriateFor: nil, create: false)
+            let documentDirectory = try FileManager.default.url(
+                for: .documentDirectory,
+                in: .userDomainMask,
+                appropriateFor: nil,
+                create: false
+            )
+
             let companiesSubURL = documentDirectory.appendingPathComponent("Companies.json")
             let employeesSubURL = documentDirectory.appendingPathComponent("Employees.json")
 
