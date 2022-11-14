@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             createFileIfDoesNotExist(url: companiesSubURL)
             createFileIfDoesNotExist(url: employeesSubURL)
         } catch {
-            print(error)
+            fatalError()
         }
     }
 
