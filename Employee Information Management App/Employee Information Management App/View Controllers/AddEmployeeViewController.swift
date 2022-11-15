@@ -49,10 +49,8 @@ final class AddEmployeeViewController: UIViewController {
 
 extension AddEmployeeViewController {
     private func setupViews() {
-        // navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.title
         navigationItem.rightBarButtonItem = doneBarButtonItem
-        //UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(tappedCancel))
     }
 }

@@ -71,7 +71,6 @@ extension EmployeeDetailsViewController {
     }
 
     private func setupViews() {
-        // navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.title
 
         setupInitialTexts()
