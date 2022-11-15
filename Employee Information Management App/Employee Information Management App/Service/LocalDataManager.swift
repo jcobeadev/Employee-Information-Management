@@ -19,14 +19,15 @@ final class LocalDataManager {
             let url = documentDirectory.appendingPathComponent("\(Filename.Companies.rawValue).json")
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
-            let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)
-            return companies.map { Company(id: $0.id, userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}
+            let persistableCompanies = try JSONDecoder().decode([PersistableCompany].self, from: jsonData)
+
+            return persistableCompanies.toHighLevelEntity()
         } catch {
             throw error
         }
     }
 
-    private func writeData(companies: [PersitableCompany]) throws {
+    private func writeData(companies: [PersistableCompany]) throws {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
             let url = documentDirectory.appendingPathComponent("\(Filename.Companies.rawValue).json")
@@ -47,8 +48,9 @@ final class LocalDataManager {
             let url = documentDirectory.appendingPathComponent("\(Filename.Employees.rawValue).json")
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
-            let employees = try JSONDecoder().decode([PersistableEmployee].self, from: jsonData)
-            return employees.map { Employee(id: $0.id, companyID: $0.company_id, firstName: $0.first_name, lastName: $0.last_name, role: $0.role, isResigned: $0.is_resigned)}
+            let persistableEmployees = try JSONDecoder().decode([PersistableEmployee].self, from: jsonData)
+
+            return persistableEmployees.toHighLevelEntity()
         } catch {
             throw error
         }
@@ -74,7 +76,7 @@ final class LocalDataManager {
 extension LocalDataManager: EmployeeLocalDataManager {
     func addEmployee(firstName: String, lastName: String, role: String, completion: @escaping AddEmployeeResultCompletion) {
         let companyProvider = CompanyProvider()
-
+        
         let employee = Employee(
             id: UUID().uuidString,
             companyID: companyProvider.currentCompany()?.id ?? "",
@@ -83,37 +85,30 @@ extension LocalDataManager: EmployeeLocalDataManager {
             role: role,
             isResigned: false
         )
-
+        
         do {
             var employees = try fetchEmployees()
             employees.append(employee)
-            try writeData(employees: employees.toLocal())
+            try writeData(employees: employees.toLowLevelEntity())
             completion(.success(employee))
         } catch {
             completion(.failure(error))
         }
     }
-
+    
     func editEmployee(employee: Employee, completion: @escaping EditEmployeeResultCompletion) {
         do {
             var employees = try fetchEmployees()
             if let index = employees.firstIndex(where: { $0.id == employee.id }) {
                 employees[index] = employee
             }
-            try writeData(employees: employees.toLocal())
+            try writeData(employees: employees.toLowLevelEntity())
             completion(.success(()))
         } catch {
             completion(.failure(error))
         }
     }
 }
-
-private extension Array where Element == Employee {
-    func toLocal() -> [PersistableEmployee] {
-        return map { PersistableEmployee(id: $0.id, company_id: $0.companyID, first_name: $0.firstName, last_name: $0.lastName, role: $0.role, is_resigned: $0.isResigned)}
-    }
-}
-
 
 // MARK: - Login
 extension LocalDataManager: LoginLocalDataManager {
@@ -124,14 +119,14 @@ extension LocalDataManager: LoginLocalDataManager {
 
             if let company = companies.first(where: { $0.userName == userName && $0.password == password }) {
 
-                var arr = [Company]()
+                var _companies = [Company]()
                 for var object in companies {
                     object.isSelected = false
                     if object.id == company.id { object.isSelected = true }
-                    arr.append(object)
+                    _companies.append(object)
                 }
 
-                try writeData(companies: arr.map { PersitableCompany(id: $0.id, user_name: $0.userName, email: $0.email, password: $0.password, is_selected: $0.isSelected)})
+                try writeData(companies: _companies.toLowLevelEntity())
 
                 completion(.success(company))
             } else {
@@ -172,10 +167,11 @@ extension LocalDataManager: SignUpLocalDataManager {
                 completion(.failure(error))
             } else {
 
-                var persistableCompanies = companies.map { PersitableCompany(id: $0.id, user_name: $0.userName, email: $0.email, password: $0.password, is_selected: false)}
+                // we didn't use helper, because we need to set isSelected to false.
+                var persistableCompanies = companies.map { PersistableCompany(id: $0.id, user_name: $0.userName, email: $0.email, password: $0.password, is_selected: false) }
 
                 // select new signed up company
-                let persistableCompany = PersitableCompany(id: UUID().uuidString, user_name: company.userName, email: company.email, password: company.password, is_selected: true)
+                let persistableCompany = PersistableCompany(id: UUID().uuidString, user_name: company.userName, email: company.email, password: company.password, is_selected: true)
 
                 persistableCompanies.append(persistableCompany)
 

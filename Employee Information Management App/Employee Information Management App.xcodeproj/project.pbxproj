@@ -18,7 +18,7 @@
 		B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE2291F684F00BF8D52 /* LoginViewController.swift */; };
 		B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */; };
 		B186EFE7291F6A6B00BF8D52 /* EmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */; };
-		B186EFEA291F6C5D00BF8D52 /* PersitableCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */; };
+		B186EFEA291F6C5D00BF8D52 /* PersistableCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE9291F6C5D00BF8D52 /* PersistableCompany.swift */; };
 		B186EFEF291F6F9600BF8D52 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */; };
 		B186EFF2291F72A400BF8D52 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFF1291F72A400BF8D52 /* UIColor+Extensions.swift */; };
 		B186EFF5291F746E00BF8D52 /* AddEmployeeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFF4291F746E00BF8D52 /* AddEmployeeCoordinator.swift */; };
@@ -43,6 +43,7 @@
 		B1AE6C502923644800813CB8 /* EmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE6C4F2923644800813CB8 /* EmployeeDetailsViewController.swift */; };
 		B1AE6C522923648A00813CB8 /* EmployeeDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE6C512923648A00813CB8 /* EmployeeDetailsCoordinator.swift */; };
 		B1AE6C54292365DF00813CB8 /* EmployeeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE6C53292365DF00813CB8 /* EmployeeDetailsViewModel.swift */; };
+		B1AE6C5629238FE000813CB8 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AE6C5529238FE000813CB8 /* Array+Extensions.swift */; };
 		B1EECC662923457D00943F3F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B1EECC652923457D00943F3F /* RxCocoa */; };
 		B1EECC682923457D00943F3F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1EECC672923457D00943F3F /* RxSwift */; };
 /* End PBXBuildFile section */
@@ -72,7 +73,7 @@
 		B186EFE2291F684F00BF8D52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B186EFE4291F6A3100BF8D52 /* EmployeeListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListCoordinator.swift; sourceTree = "<group>"; };
 		B186EFE6291F6A6B00BF8D52 /* EmployeeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewController.swift; sourceTree = "<group>"; };
-		B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersitableCompany.swift; sourceTree = "<group>"; };
+		B186EFE9291F6C5D00BF8D52 /* PersistableCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableCompany.swift; sourceTree = "<group>"; };
 		B186EFEE291F6F9600BF8D52 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		B186EFF1291F72A400BF8D52 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		B186EFF4291F746E00BF8D52 /* AddEmployeeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeCoordinator.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		B1AE6C4F2923644800813CB8 /* EmployeeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewController.swift; sourceTree = "<group>"; };
 		B1AE6C512923648A00813CB8 /* EmployeeDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsCoordinator.swift; sourceTree = "<group>"; };
 		B1AE6C53292365DF00813CB8 /* EmployeeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewModel.swift; sourceTree = "<group>"; };
+		B1AE6C5529238FE000813CB8 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +192,7 @@
 		B186EFE8291F6C2700BF8D52 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B186EFE9291F6C5D00BF8D52 /* PersitableCompany.swift */,
+				B186EFE9291F6C5D00BF8D52 /* PersistableCompany.swift */,
 				B186F010291FD06700BF8D52 /* PersistableEmployee.swift */,
 				B186F012291FD09800BF8D52 /* Employee.swift */,
 				B18E06DD291FF04C00D0887E /* Company.swift */,
@@ -216,6 +218,7 @@
 			children = (
 				B186EFF1291F72A400BF8D52 /* UIColor+Extensions.swift */,
 				B186EFF9291F764000BF8D52 /* UIViewController+Extensions.swift */,
+				B1AE6C5529238FE000813CB8 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,7 +374,7 @@
 				B186EFE5291F6A3100BF8D52 /* EmployeeListCoordinator.swift in Sources */,
 				B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */,
 				B186F000291F9C3500BF8D52 /* SignUpCoordinator.swift in Sources */,
-				B186EFEA291F6C5D00BF8D52 /* PersitableCompany.swift in Sources */,
+				B186EFEA291F6C5D00BF8D52 /* PersistableCompany.swift in Sources */,
 				B186EFFC291F772A00BF8D52 /* AddEmployeeViewModel.swift in Sources */,
 				B1AE6C502923644800813CB8 /* EmployeeDetailsViewController.swift in Sources */,
 				B186EFEF291F6F9600BF8D52 /* EmployeeListViewModel.swift in Sources */,
@@ -381,6 +384,7 @@
 				B186F007291FB7EC00BF8D52 /* SignUpLocalDataManager.swift in Sources */,
 				B186EFFA291F764000BF8D52 /* UIViewController+Extensions.swift in Sources */,
 				B186EFF2291F72A400BF8D52 /* UIColor+Extensions.swift in Sources */,
+				B1AE6C5629238FE000813CB8 /* Array+Extensions.swift in Sources */,
 				B12279FE291F4D2B00E7E009 /* AppDelegate.swift in Sources */,
 				B1227A00291F4D2B00E7E009 /* SceneDelegate.swift in Sources */,
 			);
