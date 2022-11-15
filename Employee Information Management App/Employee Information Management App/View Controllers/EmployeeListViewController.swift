@@ -62,10 +62,6 @@ final class EmployeeListViewController: UIViewController {
         viewModel.tappedAddEmployee()
     }
 
-    deinit {
-        print("deinit from employee viewcontroller")
-    }
-
 }
 
 extension EmployeeListViewController: UITableViewDelegate {

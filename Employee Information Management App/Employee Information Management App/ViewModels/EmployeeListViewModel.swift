@@ -38,7 +38,6 @@ final class EmployeeListViewModel {
 
     func tappedItem(at indexPath: IndexPath) {
         guard let employees = try? employees.value() else { return }
-        print(employees[indexPath.row])
 
         // tell coordinator that we're going to employee detail screen
         coordinator?.startEditEmployee(employee: employees[indexPath.row])
@@ -47,9 +46,5 @@ final class EmployeeListViewModel {
     func tappedLogout() {
         coordinator?.didLogOut()
     }
-
-    deinit {
-        print("deinit from employee list view model")
-    }
-
+    
 }

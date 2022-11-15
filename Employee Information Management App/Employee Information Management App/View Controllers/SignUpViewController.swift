@@ -33,25 +33,26 @@ final class SignUpViewController: UIViewController {
     private func bind() {
         userNameTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.userNameTextPublishSubject)
+            .bind(to: viewModel.userName)
             .disposed(by: disposeBag)
 
         emailTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.emailTextPublishSubject)
+            .bind(to: viewModel.email)
             .disposed(by: disposeBag)
 
         passwordTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.passwordTextPublishSubject)
+            .bind(to: viewModel.firstPassword)
             .disposed(by: disposeBag)
 
         confirmPasswordTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.confirmPasswordTextPublishSubject)
+            .bind(to: viewModel.secondPassword)
             .disposed(by: disposeBag)
 
-        viewModel.isFormvalid().bind(to: signUpButton.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.isValidInput.bind(to: signUpButton.rx.isEnabled).disposed(by: disposeBag)
+        viewModel.isValidInput.map { $0 ? 1 : 0.6 }.bind(to: signUpButton.rx.alpha).disposed(by: disposeBag)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -64,7 +65,10 @@ final class SignUpViewController: UIViewController {
     }
 
     @IBAction func tappedSignUpButton(_ sender: UIButton) {
-        viewModel.signUp()
+        viewModel.signUp { [weak self] error in
+            guard let error else { return }
+            self?.presentErrorAlert(error)
+        }
     }
 
 }

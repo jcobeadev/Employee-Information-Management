@@ -45,9 +45,6 @@ final class AddEmployeeViewModel {
         }
     }
 
-    deinit {
-        print("deinit from add employee view model")
-    }
 }
 
 // MARK: Oberserver

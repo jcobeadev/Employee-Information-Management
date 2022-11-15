@@ -39,70 +39,68 @@ extension SignUpError: LocalizedError {
 
 final class SignUpViewModel {
 
-    private var userName = ""
-    private var email = ""
-    private var password = ""
 
-    let userNameTextPublishSubject = PublishSubject<String>()
-    let emailTextPublishSubject = PublishSubject<String>()
-    let passwordTextPublishSubject = PublishSubject<String>()
-    let confirmPasswordTextPublishSubject = PublishSubject<String>()
+    private let disposeBag = DisposeBag()
+    var userName: BehaviorSubject<String> = BehaviorSubject(value: "")
+    var email: BehaviorSubject<String> = BehaviorSubject(value: "")
+    var firstPassword: BehaviorSubject<String> = BehaviorSubject(value: "")
+    var secondPassword: BehaviorSubject<String> = BehaviorSubject(value: "")
+
+    private var isValidUsername: Observable<Bool> {
+        userName.map { $0.count > 3 }
+    }
+
+    private var isValidEmail: Observable<Bool> {
+        email.map { $0.isValidEmail() }
+    }
+
+    private var isValidFirstPassword: Observable<Bool> {
+        firstPassword.map { $0.count > 3 }
+    }
+
+    private var isValidSecondPassword: Observable<Bool> {
+        secondPassword.map { $0.count > 3 }
+    }
+
+    var isValidInput: Observable<Bool> {
+        return Observable.combineLatest(isValidUsername, isValidEmail, isValidFirstPassword, isValidSecondPassword).map { $0 && $1 && $2 && $3 }
+    }
 
     let dataManager: SignUpLocalDataManager
-
-    let disposeBag = DisposeBag()
-
-    var error: SignUpError?
     var coordinator: SignUpCoordinator?
 
     init(dataManager: SignUpLocalDataManager) {
         self.dataManager = dataManager
     }
 
-
-    func isFormvalid() -> Observable<Bool> {
-
-        return Observable.combineLatest(
-            userNameTextPublishSubject
-                .asObservable()
-                .startWith(""),
-            emailTextPublishSubject
-                .asObservable()
-                .startWith(""),
-            passwordTextPublishSubject
-                .asObservable()
-                .startWith(""),
-            confirmPasswordTextPublishSubject
-                .asObservable()
-                .startWith(""))
-            .map { username, email, password, confirmPassword in
-
-                self.userName = username
-                self.email = email
-                self.password = password
-
-                return self.error == nil
-        }
-    }
-
     func viewDidDisappear() {
         coordinator?.didFinish()
     }
 
-    func signUp() {
-        self.dataManager.signUp(userName: userName, email: email, password: password){ [weak self] result in
-            switch result {
-            case .success:
-                self?.coordinator?.didFinishSignUp()
-            case let .failure(error):
-                print(error)
-            }
+    func signUp(completion: @escaping (Error?) -> Void) {
+        do {
+            let userName = try userName.value()
+            let email = try email.value()
+            let firstPassword = try firstPassword.value()
+            let secondPassword = try secondPassword.value()
+
+            guard firstPassword == secondPassword else { throw SignUpError.passwordDoesNotMatch }
+
+            dataManager.signUp(
+                userName: userName,
+                email: email,
+                password: firstPassword) { [weak self] result in
+                    switch result {
+                    case .success:
+                        completion(nil)
+                        self?.coordinator?.didFinishSignUp()
+                    case let .failure(error):
+                        completion(error)
+                    }
+                }
+        } catch {
+            completion(error)
         }
     }
-
-    deinit {
-        print("deinit from sign up view model")
-    }
-
 
 }

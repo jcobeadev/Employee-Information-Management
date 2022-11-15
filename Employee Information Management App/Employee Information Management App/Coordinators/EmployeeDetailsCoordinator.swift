@@ -41,8 +41,4 @@ final class EmployeeDetailsCoordinator: Coordinator {
         // navigationController.popViewController(animated: true)
     }
 
-    deinit {
-        print("deinit EmployeeDetailsCoordinator")
-    }
-
 }

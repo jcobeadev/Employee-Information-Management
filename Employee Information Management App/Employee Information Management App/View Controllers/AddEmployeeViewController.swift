@@ -30,10 +30,6 @@ final class AddEmployeeViewController: UIViewController {
         viewModel.viewDidDisappear()
     }
 
-    deinit {
-        print("deinit from add employee view controller")
-    }
-
     @objc
     private func tappedDone() {
         viewModel.tappedDoneButton()

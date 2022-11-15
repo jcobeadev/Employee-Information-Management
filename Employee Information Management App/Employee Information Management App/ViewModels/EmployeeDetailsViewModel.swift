@@ -46,11 +46,6 @@ final class EmployeeDetailsViewModel {
             }
         }
     }
-
-    deinit {
-        print("deinit EmployeeDetailsViewModel")
-    }
-
 }
 
 // MARK: Oberserver

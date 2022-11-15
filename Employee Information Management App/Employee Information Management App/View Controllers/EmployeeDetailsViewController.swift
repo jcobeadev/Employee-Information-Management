@@ -31,10 +31,6 @@ final class EmployeeDetailsViewController: UIViewController {
         viewModel.viewDidDisAppear()
     }
 
-    deinit {
-        print("deinit EmployeeDetailsViewController")
-    }
-
     @objc
     func tappedEditButton() {
         firstNameTextField.isUserInteractionEnabled = true

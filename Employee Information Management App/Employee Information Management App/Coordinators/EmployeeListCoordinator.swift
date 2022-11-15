@@ -66,7 +66,4 @@ final class EmployeeListCoordinator: Coordinator {
         parentCoordinator?.childDidFinish(self)
     }
 
-    deinit {
-        print("deinit from employee coordinator")
-    }
 }

@@ -22,7 +22,6 @@ final class CompanyProvider: PersistedCompanyProvider {
             let company = companies.map { Company(id: $0.id, userName: $0.user_name, email: $0.email, password: $0.password, isSelected: $0.is_selected)}.first(where: { $0.isSelected == true }  )
             return company
         } catch {
-            print(error)
             return nil
         }
     }
