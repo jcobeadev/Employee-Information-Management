@@ -15,7 +15,7 @@ final class CompanyProvider: PersistedCompanyProvider {
     func currentCompany() -> Company? {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
-            let url = documentDirectory.appendingPathComponent("Companies.json")
+            let url = documentDirectory.appendingPathComponent("\(Filename.Companies.rawValue).json")
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return nil  }
             let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)

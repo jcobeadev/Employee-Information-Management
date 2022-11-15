@@ -81,8 +81,6 @@ final class SignUpViewModel {
                 self.email = email
                 self.password = password
 
-                print(username, email, password, confirmPassword)
-
                 return self.error == nil
         }
     }
@@ -94,11 +92,10 @@ final class SignUpViewModel {
     func signUp() {
         self.dataManager.signUp(userName: userName, email: email, password: password){ [weak self] result in
             switch result {
-            case let .success(company):
-                print("signUp", company)
+            case .success:
                 self?.coordinator?.didFinishSignUp()
             case let .failure(error):
-                print("signUp", error)
+                print(error)
             }
         }
     }

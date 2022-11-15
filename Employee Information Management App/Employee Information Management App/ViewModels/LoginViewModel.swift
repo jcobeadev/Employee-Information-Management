@@ -46,11 +46,10 @@ final class LoginViewModel {
     func tappedLogin() {
         dataManager.login(userName: userName, password: password) { [weak self] result in
             switch result {
-            case let .success(company):
-                print("company", company)
+            case .success:
                 self?.coordinator?.startEmployeeLists(animated: true)
             case let .failure(error):
-                print("error", error)
+                print(error)
             }
         }
     }

@@ -121,8 +121,6 @@ extension LocalDataManager: LoginLocalDataManager {
 
         do {
             let companies = try fetchCompanies()
-            dump(companies, name: "companies")
-            print(userName, password)
 
             if let company = companies.first(where: { $0.userName == userName && $0.password == password }) {
 
