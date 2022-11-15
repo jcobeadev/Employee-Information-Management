@@ -7,11 +7,16 @@
 
 import Foundation
 
+enum Filename: String {
+    case Companies
+    case Employees
+}
+
 final class LocalDataManager {
     private func fetchCompanies() throws -> [Company] {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
-            let url = documentDirectory.appendingPathComponent("Companies.json")
+            let url = documentDirectory.appendingPathComponent("\(Filename.Companies.rawValue).json")
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
             let companies = try JSONDecoder().decode([PersitableCompany].self, from: jsonData)
@@ -24,7 +29,7 @@ final class LocalDataManager {
     private func writeData(companies: [PersitableCompany]) throws {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
-            let url = documentDirectory.appendingPathComponent("Companies.json")
+            let url = documentDirectory.appendingPathComponent("\(Filename.Companies.rawValue).json")
 
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
@@ -39,7 +44,7 @@ final class LocalDataManager {
     func fetchEmployees() throws -> [Employee] {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
-            let url = documentDirectory.appendingPathComponent("Employees.json")
+            let url = documentDirectory.appendingPathComponent("\(Filename.Employees.rawValue).json")
             let jsonData = try Data(contentsOf: url)
             if jsonData.isEmpty { return [] }
             let employees = try JSONDecoder().decode([PersistableEmployee].self, from: jsonData)
@@ -52,7 +57,7 @@ final class LocalDataManager {
     private func writeData(employees: [PersistableEmployee]) throws {
         do {
             let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create:false)
-            let url = documentDirectory.appendingPathComponent("Employees.json")
+            let url = documentDirectory.appendingPathComponent("\(Filename.Employees.rawValue).json")
 
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
