@@ -24,6 +24,7 @@ final class EmployeeDetailsViewController: UIViewController {
         bind()
         viewModel.viewDidLoad()
         setupInitialTexts()
+        setupEditButton()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -35,9 +36,40 @@ final class EmployeeDetailsViewController: UIViewController {
         print("deinit EmployeeDetailsViewController")
     }
 
+    @objc
+    func tappedEditButton() {
+        firstNameTextField.isUserInteractionEnabled = true
+        lastNameTextField.isUserInteractionEnabled = true
+        roleTextField.isUserInteractionEnabled = true
+        isResigned.isUserInteractionEnabled = true
+
+        setupSaveButton()
+    }
+
+    @objc
+    func tappedSaveButton() {
+        firstNameTextField.isUserInteractionEnabled = false
+        lastNameTextField.isUserInteractionEnabled = false
+        roleTextField.isUserInteractionEnabled = false
+        isResigned.isUserInteractionEnabled = false
+
+        setupEditButton()
+    }
+
 }
 
 extension EmployeeDetailsViewController {
+
+    private func setupEditButton() {
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(tappedEditButton))
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+
+    private func setupSaveButton() {
+        let editButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(tappedSaveButton))
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+
     private func setupViews() {
 
     }
