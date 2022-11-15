@@ -32,18 +32,17 @@ final class LoginViewController: UIViewController {
     private func bind() {
         userNameTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.userNameTextPublishSubject)
+            .bind(to: viewModel.userName)
             .disposed(by: disposeBag)
 
         passwordTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.passwordTextPublishSubject)
+            .bind(to: viewModel.password)
             .disposed(by: disposeBag)
 
-        viewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
-        viewModel.isValid().map { $0 ? 1 : 0.6 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
-
-
+        viewModel.isValidInput.bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
+        
+        viewModel.isValidInput.map { $0 ? 1 : 0.6 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
     }
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {

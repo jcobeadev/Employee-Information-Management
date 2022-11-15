@@ -10,6 +10,7 @@ import Foundation
 enum DataManagerError: Error, Equatable {
     case companyDoesNotExist
     case allFiedsShouldNotBeEmpty
+    case wrongPassword
 }
 
 extension DataManagerError: LocalizedError {
@@ -19,6 +20,8 @@ extension DataManagerError: LocalizedError {
             return "Company does not exists. \nPlease sign up"
         case .allFiedsShouldNotBeEmpty:
             return "All fields should not be empty."
+        case .wrongPassword:
+            return "Wrong password, please try again."
         }
     }
 }

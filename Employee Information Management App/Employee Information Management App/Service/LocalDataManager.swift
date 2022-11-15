@@ -117,7 +117,11 @@ extension LocalDataManager: LoginLocalDataManager {
         do {
             let companies = try fetchCompanies()
 
-            if let company = companies.first(where: { $0.userName == userName && $0.password == password }) {
+            if let company = companies.first(where: { $0.userName == userName }) {
+
+                guard company.password == password else {
+                    throw DataManagerError.wrongPassword
+                }
 
                 var _companies = [Company]()
                 for var object in companies {
