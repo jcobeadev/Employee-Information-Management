@@ -30,7 +30,8 @@ final class EmployeeListViewModel {
 
     func reload() {
         if let employees = try? dataManager.fetchEmployees() {
-            self.employees.on(.next(employees.filter { $0.companyID == CompanyProvider().currentCompany()?.id }.reversed()))
+            let filteredEmployees = employees.filter { $0.companyID == CompanyProvider().currentCompany()?.id }
+            self.employees.on(.next(filteredEmployees.reversed()))
         }
     }
 
