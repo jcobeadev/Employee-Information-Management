@@ -32,11 +32,6 @@ final class AppCoordinator: Coordinator {
         childCoordinators.append(loginCoordinator)
         loginCoordinator.start()
 
-//        let employeeListCoordinator = EmployeeListCoordinator(navigationController: navigationController)
-//
-//        childCoordinators.append(employeeListCoordinator)
-//        employeeListCoordinator.start()
-
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
