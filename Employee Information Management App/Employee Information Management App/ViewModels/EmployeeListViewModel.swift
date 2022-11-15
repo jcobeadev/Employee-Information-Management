@@ -21,12 +21,9 @@ final class EmployeeListViewModel {
         self.dataManager = dataManager
     }
 
-    // MARK: Life Cycle
     func viewDidLoad() {
         reload()
     }
-
-    // MARK: Functionalities
 
     func reload() {
         if let employees = try? dataManager.fetchEmployees() {
@@ -43,7 +40,6 @@ final class EmployeeListViewModel {
         coordinator?.didLogOut()
         print("did logout view model")
     }
-
 
     deinit {
         print("deinit from employee list view model")

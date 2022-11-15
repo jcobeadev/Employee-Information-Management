@@ -82,13 +82,33 @@ extension LocalDataManager: EmployeeLocalDataManager {
         do {
             var employees = try fetchEmployees()
             employees.append(employee)
-            try writeData(employees: employees.map { PersistableEmployee(id: $0.id, company_id: $0.companyID, first_name: $0.firstName, last_name: $0.lastName, role: $0.role, is_resigned: $0.isResigned)})
+            try writeData(employees: employees.toLocal())
             completion(.success(employee))
         } catch {
             completion(.failure(error))
         }
     }
+
+    func editEmployee(employee: Employee, completion: @escaping EditEmployeeResultCompletion) {
+        do {
+            var employees = try fetchEmployees()
+            if let index = employees.firstIndex(where: { $0.id == employee.id }) {
+                employees[index] = employee
+            }
+            try writeData(employees: employees.toLocal())
+
+        } catch {
+            completion(.failure(error))
+        }
+    }
 }
+
+private extension Array where Element == Employee {
+    func toLocal() -> [PersistableEmployee] {
+        return map { PersistableEmployee(id: $0.id, company_id: $0.companyID, first_name: $0.firstName, last_name: $0.lastName, role: $0.role, is_resigned: $0.isResigned)}
+    }
+}
+
 
 // MARK: - Login
 extension LocalDataManager: LoginLocalDataManager {
