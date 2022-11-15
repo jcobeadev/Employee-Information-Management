@@ -10,7 +10,6 @@ import Foundation
 
 final class SignUpViewModel {
 
-
     private let disposeBag = DisposeBag()
     var userName: BehaviorSubject<String> = BehaviorSubject(value: "")
     var email: BehaviorSubject<String> = BehaviorSubject(value: "")
@@ -39,6 +38,7 @@ final class SignUpViewModel {
 
     let dataManager: SignUpLocalDataManager
     var coordinator: SignUpCoordinator?
+    let title = "Sign Up"
 
     init(dataManager: SignUpLocalDataManager) {
         self.dataManager = dataManager
