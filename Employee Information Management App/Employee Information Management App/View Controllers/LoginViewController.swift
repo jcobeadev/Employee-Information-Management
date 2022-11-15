@@ -42,13 +42,19 @@ final class LoginViewController: UIViewController {
 
         viewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
         viewModel.isValid().map { $0 ? 1 : 0.6 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
+
+
     }
 
     @IBAction func tappedLoginButton(_ sender: UIButton) {
-        viewModel.tappedLogin()
+        viewModel.tappedLogin { [weak self] error in
+            guard let error else { return }
+            self?.presentErrorAlert(error)
+        }
     }
 
     @IBAction func tappedSignUpButton(_ sender: UIButton) {        
         viewModel.tappedSignUp()
     }
+
 }

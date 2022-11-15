@@ -42,7 +42,4 @@ final class AddEmployeeCoordinator: Coordinator {
         navigationController.dismiss(animated: true, completion: nil)
     }
 
-    deinit {
-        print("deinit from add employee coordinator")
-    }
 }

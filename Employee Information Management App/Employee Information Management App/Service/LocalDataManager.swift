@@ -130,7 +130,7 @@ extension LocalDataManager: LoginLocalDataManager {
 
                 completion(.success(company))
             } else {
-                let error = NSError(domain: "Company does not exists. Please sign up.", code: 9999, userInfo: nil)
+                let error: DataManagerError = .companyDoesNotExist
                 completion(.failure(error))
             }
 
@@ -148,6 +148,23 @@ extension LocalDataManager: LoginLocalDataManager {
             return false
         }
         return false
+    }
+}
+
+// MARK: - Logout
+extension LocalDataManager: LogoutLocalDataManager {
+    func logout(completion: @escaping LogoutResultCompletion) {
+        do {
+            let companies = try fetchCompanies()
+            /// set all companies `isSelected` to false
+            let persistableCompanies = companies.map { PersistableCompany(id: $0.id, user_name: $0.userName, email: $0.email, password: $0.password, is_selected: false) }
+
+            try writeData(companies: persistableCompanies)
+
+            completion(.success(()))
+        } catch {
+            completion(.failure(error))
+        }
     }
 }
 

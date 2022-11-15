@@ -31,10 +31,6 @@ final class EmployeeDetailsViewController: UIViewController {
         viewModel.viewDidDisAppear()
     }
 
-    deinit {
-        print("deinit EmployeeDetailsViewController")
-    }
-
     @objc
     func tappedEditButton() {
         firstNameTextField.isUserInteractionEnabled = true
@@ -52,7 +48,10 @@ final class EmployeeDetailsViewController: UIViewController {
         roleTextField.isUserInteractionEnabled = false
         isResigned.isUserInteractionEnabled = false
 
-        viewModel.tappedSaveButton()
+        viewModel.tappedSaveButton { [weak self] error in
+            guard let error else { return }
+            self?.presentErrorAlert(error)
+        }
 
         setupEditButton()
     }
