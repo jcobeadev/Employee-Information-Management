@@ -11,13 +11,19 @@ import RxCocoa
 
 final class EmployeeDetailsViewModel {
 
-    var employee: Employee
+    var employee: Employee {
+        didSet {
+            dump(employee)
+        }
+    }
     let dataManager: EmployeeLocalDataManager
     weak var coordinator: EmployeeDetailsCoordinator?
 
     // Rx
-    var firstName = BehaviorSubject<String>(value: "")
-
+    let fistNameTextPublishSubject = PublishSubject<String>()
+    let lastNameTextPublishSubject = PublishSubject<String>()
+    let roleTextPublishSubject = PublishSubject<String>()
+    let isResignedPublishSubject = PublishSubject<Bool>()
     private let disposeBag = DisposeBag()
 
     init(employee: Employee, dataManager: EmployeeLocalDataManager) {
@@ -27,8 +33,6 @@ final class EmployeeDetailsViewModel {
 
     func viewDidLoad() {
         observe()
-
-        firstName.on(.next(employee.firstName))
     }
 
     func viewDidDisAppear() {
@@ -57,5 +61,36 @@ final class EmployeeDetailsViewModel {
 extension EmployeeDetailsViewModel {
     private func observe() {
 
+        fistNameTextPublishSubject
+            .asObservable()
+            .startWith(employee.firstName)
+            .subscribe(onNext: { [weak self] firstName in
+                self?.employee.firstName = firstName
+            })
+            .disposed(by: disposeBag)
+
+        lastNameTextPublishSubject
+            .asObservable()
+            .startWith(employee.lastName)
+            .subscribe(onNext: { [weak self] lastName in
+                self?.employee.lastName = lastName
+            })
+            .disposed(by: disposeBag)
+
+        roleTextPublishSubject
+            .asObservable()
+            .startWith(employee.role)
+            .subscribe(onNext: { [weak self] role in
+                self?.employee.role = role
+            })
+            .disposed(by: disposeBag)
+
+        isResignedPublishSubject
+            .asObservable()
+            .startWith(employee.isResigned)
+            .subscribe(onNext: { [weak self] isResigned in
+                self?.employee.isResigned = isResigned
+            })
+            .disposed(by: disposeBag)
     }
 }

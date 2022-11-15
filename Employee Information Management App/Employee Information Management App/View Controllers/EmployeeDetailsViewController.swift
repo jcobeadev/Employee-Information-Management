@@ -21,23 +21,15 @@ final class EmployeeDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // setup initial views
-        firstNameTextField.text = viewModel.employee.firstName
-        lastNameTextField.text = viewModel.employee.lastName
-        roleTextField.text = viewModel.employee.role
-        isResigned.isOn = viewModel.employee.isResigned
-
-        viewModel.viewDidLoad()
         bind()
-
+        viewModel.viewDidLoad()
+        setupInitialTexts()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         viewModel.viewDidDisAppear()
     }
-
 
     deinit {
         print("deinit EmployeeDetailsViewController")
@@ -46,8 +38,41 @@ final class EmployeeDetailsViewController: UIViewController {
 }
 
 extension EmployeeDetailsViewController {
+    private func setupViews() {
+
+    }
+
+    private func setupInitialTexts() {
+        firstNameTextField.text = viewModel.employee.firstName
+        lastNameTextField.text = viewModel.employee.lastName
+        roleTextField.text = viewModel.employee.role
+        isResigned.isOn = viewModel.employee.isResigned
+    }
+}
+
+extension EmployeeDetailsViewController {
     private func bind() {
 
+        firstNameTextField
+            .rx
+            .text.map { $0 ?? "" }
+            .bind(to: viewModel.fistNameTextPublishSubject)
+            .disposed(by: disposeBag)
+
+        lastNameTextField
+            .rx.text.map { $0 ?? "" }
+            .bind(to: viewModel.lastNameTextPublishSubject)
+            .disposed(by: disposeBag)
+
+        roleTextField
+            .rx.text.map { $0 ?? "" }
+            .bind(to: viewModel.roleTextPublishSubject)
+            .disposed(by: disposeBag)
+
+        isResigned
+            .rx.isOn
+            .bind(to: viewModel.isResignedPublishSubject)
+            .disposed(by: disposeBag)
 
     }
 }
