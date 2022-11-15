@@ -6,17 +6,26 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class EmployeeListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel: EmployeeListViewModel!
+    private var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         setupViews()
+
+        // Bind table view
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        viewModel.employees.bind(to: tableView.rx.items(cellIdentifier: "EmployeeCell", cellType: EmployeeCell.self)) { row, item, cell in
+            cell.update(with: EmployeeCellViewModel(employee: item))
+        }.disposed(by: disposeBag)
     }
 
     private func setupViews() {
@@ -60,19 +69,19 @@ final class EmployeeListViewController: UIViewController {
 
 }
 
-extension EmployeeListViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numOfRows()
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
-        cell.update(with: viewModel.cellViewModel(at: indexPath))
-        return cell
-    }
-
-}
+//extension EmployeeListViewController: UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return viewModel.numOfRows()
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell", for: indexPath) as! EmployeeCell
+//        cell.update(with: viewModel.cellViewModel(at: indexPath.row))
+//        return cell
+//    }
+//
+//}
 extension EmployeeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

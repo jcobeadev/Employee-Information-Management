@@ -10,6 +10,7 @@ import UIKit
 final class EmployeeListCoordinator: Coordinator {
 
     private(set) var childCoordinators: [Coordinator] = []
+    var onSaveEvent = {}
 
     private let navigationController: UINavigationController
 
@@ -25,6 +26,7 @@ final class EmployeeListCoordinator: Coordinator {
         let employeeListViewController: EmployeeListViewController = .instantiate()
         let employeeListViewModel = EmployeeListViewModel(dataManager: LocalDataManager())
         employeeListViewModel.coordinator = self
+        onSaveEvent = employeeListViewModel.reload
         employeeListViewController.viewModel = employeeListViewModel
 
         if animated {

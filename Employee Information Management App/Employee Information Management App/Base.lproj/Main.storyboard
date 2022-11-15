@@ -206,10 +206,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="IZ7-5w-Glu" id="zTd-QT-Fkh"/>
-                                    <outlet property="delegate" destination="IZ7-5w-Glu" id="dV1-wt-Pxn"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oTH-IQ-Px5"/>

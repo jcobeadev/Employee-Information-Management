@@ -38,6 +38,7 @@ final class AddEmployeeCoordinator: Coordinator {
     }
 
     func didFinishSaveEvent() {
+        parentCoordinator?.onSaveEvent()
         navigationController.dismiss(animated: true, completion: nil)
     }
 

@@ -6,29 +6,33 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class EmployeeListViewModel {
 
     let title = "Employees"
     var coordinator: EmployeeListCoordinator?
-
-    private(set) var employees: [Employee] = []
-
     let dataManager: LocalDataManager
+
+    var employees = BehaviorSubject(value: [Employee]())
 
     init(dataManager: LocalDataManager) {
         self.dataManager = dataManager
     }
 
     // MARK: Life Cycle
-
     func viewDidLoad() {
-        if let employees = try? dataManager.fetchEmployees() {
-            self.employees = employees.filter { $0.companyID == CompanyProvider().currentCompany()?.id }
-        }
+        reload()
     }
 
     // MARK: Functionalities
+
+    func reload() {
+        if let employees = try? dataManager.fetchEmployees() {
+            self.employees.on(.next(employees.filter { $0.companyID == CompanyProvider().currentCompany()?.id }.reversed()))
+        }
+    }
 
     func tappedAddEmployee() {
          coordinator?.startAddEmployee()
@@ -39,14 +43,6 @@ final class EmployeeListViewModel {
         print("did logout view model")
     }
 
-    func numOfRows() -> Int {
-        return employees.count
-    }
-
-    func cellViewModel(at index: IndexPath) -> EmployeeCellViewModel {
-        print(employees)
-        return EmployeeCellViewModel(employee: employees[index.row])
-    }
 
     deinit {
         print("deinit from employee list view model")
