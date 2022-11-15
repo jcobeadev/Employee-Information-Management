@@ -78,7 +78,7 @@ extension EmployeeListViewController {
         barButtonItem.tintColor = .primary
         navigationItem.rightBarButtonItem = barButtonItem
 
-        navigationController?.navigationBar.prefersLargeTitles = true
+        // navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.title
     }
 

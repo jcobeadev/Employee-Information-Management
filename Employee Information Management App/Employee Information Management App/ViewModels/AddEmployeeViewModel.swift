@@ -9,14 +9,26 @@ import RxSwift
 
 final class AddEmployeeViewModel {
 
-    private var firstName = ""
-    private var lastName = ""
-    private var role = ""
-
-    let fistNameTextPublishSubject = PublishSubject<String>()
-    let lastNameTextPublishSubject = PublishSubject<String>()
-    let roleTextPublishSubject = PublishSubject<String>()
     private let disposeBag = DisposeBag()
+    var firstName: BehaviorSubject<String> = BehaviorSubject(value: "")
+    var lastName: BehaviorSubject<String> = BehaviorSubject(value: "")
+    var role: BehaviorSubject<String> = BehaviorSubject(value: "")
+
+    private var isFirstNameValid: Observable<Bool> {
+        firstName.map { !$0.isEmpty }
+    }
+
+    private var isLastNameValid: Observable<Bool> {
+        lastName.map { !$0.isEmpty }
+    }
+
+    private var isRoleValid: Observable<Bool> {
+        role.map { !$0.isEmpty }
+    }
+
+    var isValidInput: Observable<Bool> {
+        return Observable.combineLatest(isFirstNameValid, isLastNameValid, isRoleValid).map { $0 && $1 && $2 }
+    }
 
     let title = "Add"
     weak var coordinator: AddEmployeeCoordinator?
@@ -26,46 +38,34 @@ final class AddEmployeeViewModel {
         self.dataManager = dataManager
     }
 
-    func viewDidLoad() {
-        observe()
-    }
-
     func viewDidDisappear() {
         coordinator?.didFinish()
     }
 
     func tappedDoneButton(completion: @escaping (Error?) -> Void) {
-        dataManager.addEmployee(firstName: firstName, lastName: lastName, role: role) { [weak self] result in
-            switch result {
-            case .success:
-                self?.coordinator?.didFinishSaveEvent()
-                completion(nil)
-            case let .failure(error):
-                completion(error)
+
+        do {
+            let firstName = try firstName.value()
+            let lastName = try lastName.value()
+            let role = try role.value()
+
+            guard !firstName.isEmpty && !lastName.isEmpty && !role.isEmpty else {
+                throw DataManagerError.allFiedsShouldNotBeEmpty
             }
+
+            dataManager.addEmployee(firstName: firstName, lastName: lastName, role: role) { [weak self] result in
+                switch result {
+                case .success:
+                    self?.coordinator?.didFinishSaveEvent()
+                    completion(nil)
+                case let .failure(error):
+                    completion(error)
+                }
+            }
+
+        } catch {
+            completion(error)
         }
     }
 
-}
-
-// MARK: Oberserver
-extension AddEmployeeViewModel {
-    private func observe() {
-        Observable.combineLatest(
-            fistNameTextPublishSubject
-                .asObservable()
-                .startWith(""),
-            lastNameTextPublishSubject
-                .asObservable()
-                .startWith(""),
-            roleTextPublishSubject
-                .asObservable()
-                .startWith("")
-        ).subscribe(onNext: { firstName, lastName, role in
-            self.firstName = firstName
-            self.lastName = lastName
-            self.role = role
-        })
-        .disposed(by: disposeBag)
-    }
 }

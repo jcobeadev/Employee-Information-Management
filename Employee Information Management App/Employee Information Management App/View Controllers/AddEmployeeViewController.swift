@@ -18,9 +18,12 @@ final class AddEmployeeViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var roleTextField: UITextField!
 
+    var doneBarButtonItem: UIBarButtonItem {
+        return UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewDidLoad()
         setupViews()
         bind()
     }
@@ -46,9 +49,10 @@ final class AddEmployeeViewController: UIViewController {
 
 extension AddEmployeeViewController {
     private func setupViews() {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        // navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = viewModel.title
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
+        navigationItem.rightBarButtonItem = doneBarButtonItem
+        //UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(tappedCancel))
     }
 }
@@ -57,18 +61,20 @@ extension AddEmployeeViewController {
     private func bind() {
         firstNameTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.fistNameTextPublishSubject)
+            .bind(to: viewModel.firstName)
             .disposed(by: disposeBag)
 
         lastNameTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.lastNameTextPublishSubject)
+            .bind(to: viewModel.lastName)
             .disposed(by: disposeBag)
 
         roleTextField
             .rx.text.map { $0 ?? "" }
-            .bind(to: viewModel.roleTextPublishSubject)
+            .bind(to: viewModel.role)
             .disposed(by: disposeBag)
+
+        viewModel.isValidInput.bind(to: doneBarButtonItem.rx.isEnabled).disposed(by: disposeBag)
 
     }
 }
