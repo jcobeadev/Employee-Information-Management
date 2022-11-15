@@ -41,6 +41,7 @@ final class EmployeeListViewModel {
         print(employees[indexPath.row])
 
         // tell coordinator that we're going to employee detail screen
+        coordinator?.startEditEmployee(employee: employees[indexPath.row])
     }
 
     func tappedLogout() {

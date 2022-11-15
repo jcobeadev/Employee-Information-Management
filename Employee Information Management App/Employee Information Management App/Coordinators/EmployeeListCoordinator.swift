@@ -46,15 +46,20 @@ final class EmployeeListCoordinator: Coordinator {
         addEmployeeCoordinator.start()
     }
 
-    func childDidFinish(_ childCoordinator: Coordinator) {
+    func startEditEmployee(employee: Employee) {
+        print("EmployeeListCoordinator startEditEmployee")
+        let employeeDetailsCoordinator = EmployeeDetailsCoordinator(navigationController: navigationController, parentCoordinator: self, employee: employee)
+        childCoordinators.append(employeeDetailsCoordinator)
+        employeeDetailsCoordinator.start()
+    }
 
+    func childDidFinish(_ childCoordinator: Coordinator) {
         for (index, coordinator) in childCoordinators.enumerated() {
             if coordinator === childCoordinator {
                 childCoordinators.remove(at: index)
                 break
             }
         }
-
     }
 
     func didLogOut() {
