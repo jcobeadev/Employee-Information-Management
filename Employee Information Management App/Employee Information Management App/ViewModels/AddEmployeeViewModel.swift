@@ -34,13 +34,14 @@ final class AddEmployeeViewModel {
         coordinator?.didFinish()
     }
 
-    func tappedDoneButton() {
+    func tappedDoneButton(completion: @escaping (Error?) -> Void) {
         dataManager.addEmployee(firstName: firstName, lastName: lastName, role: role) { [weak self] result in
             switch result {
             case .success:
                 self?.coordinator?.didFinishSaveEvent()
+                completion(nil)
             case let .failure(error):
-                print(error)
+                completion(error)
             }
         }
     }

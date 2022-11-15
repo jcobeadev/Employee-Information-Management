@@ -32,7 +32,10 @@ final class AddEmployeeViewController: UIViewController {
 
     @objc
     private func tappedDone() {
-        viewModel.tappedDoneButton()
+        viewModel.tappedDoneButton { [weak self] error in
+            guard let error else { return }
+            self?.presentErrorAlert(error)
+        }
     }
 
     @objc

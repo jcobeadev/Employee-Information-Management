@@ -36,13 +36,14 @@ final class EmployeeDetailsViewModel {
         coordinator?.didFinish()
     }
 
-    func tappedSaveButton() {
+    func tappedSaveButton(completion: @escaping (Error?) -> Void) {
         dataManager.editEmployee(employee: employee) { [weak self] result in
             switch result {
             case .success:
                 self?.coordinator?.didFinishSaveEvent()
+                completion(nil)
             case let .failure(error):
-                print(error)
+                completion(error)
             }
         }
     }
