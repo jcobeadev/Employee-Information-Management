@@ -4,7 +4,12 @@
 
 ## Application Data Flow Diagram
 <p align="center">
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Images/AppDataFlowCoordinator.png" alt="App Data Flow Diagram" title="App Data Flow Diagram"/>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/AppDataFlowCoordinator.png" alt="App Data Flow Diagram" title="App Data Flow Diagram"/>
+</p>
+
+## Demo
+<p align="center">
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Demo.gif" alt="Demo" title="Demo"/ width=200>
 </p>
 
 
