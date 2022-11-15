@@ -11,11 +11,7 @@ import RxCocoa
 
 final class EmployeeDetailsViewModel {
 
-    var employee: Employee {
-        didSet {
-            dump(employee)
-        }
-    }
+    var employee: Employee
     let dataManager: EmployeeLocalDataManager
     weak var coordinator: EmployeeDetailsCoordinator?
 
@@ -40,14 +36,15 @@ final class EmployeeDetailsViewModel {
     }
 
     func tappedSaveButton() {
-        dataManager.editEmployee(employee: employee) { result in
+        print("here.. saving emmployee")
+        dataManager.editEmployee(employee: employee) { [weak self] result in
             switch result {
             case .success:
+                self?.coordinator?.didFinishSaveEvent()
                 print("done saving..")
             case let .failure(error):
                 print(error)
             }
-            // self.coordinator?.didFinishSaveEvent()
         }
     }
 

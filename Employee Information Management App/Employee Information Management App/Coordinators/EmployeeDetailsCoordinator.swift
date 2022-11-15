@@ -35,6 +35,12 @@ final class EmployeeDetailsCoordinator: Coordinator {
         parentCoordinator.childDidFinish(self)
     }
 
+    func didFinishSaveEvent() {
+        parentCoordinator.onSaveEvent()
+        // uncomment below if you want to popViewController when saved button is tapped.
+        // navigationController.popViewController(animated: true)
+    }
+
     deinit {
         print("deinit EmployeeDetailsCoordinator")
     }

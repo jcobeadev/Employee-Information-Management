@@ -53,6 +53,8 @@ final class EmployeeDetailsViewController: UIViewController {
         roleTextField.isUserInteractionEnabled = false
         isResigned.isUserInteractionEnabled = false
 
+        viewModel.tappedSaveButton()
+
         setupEditButton()
     }
 
@@ -68,10 +70,6 @@ extension EmployeeDetailsViewController {
     private func setupSaveButton() {
         let editButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(tappedSaveButton))
         self.navigationItem.rightBarButtonItem = editButton
-    }
-
-    private func setupViews() {
-
     }
 
     private func setupInitialTexts() {
