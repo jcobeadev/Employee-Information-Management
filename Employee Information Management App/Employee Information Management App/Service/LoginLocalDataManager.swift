@@ -14,3 +14,10 @@ protocol LoginLocalDataManager {
     func login(userName: String, password: String, completion: @escaping LoginResultCompletion)
     func hasSession() -> Bool
 }
+
+protocol LogoutLocalDataManager {
+    typealias LogoutResult = Swift.Result<(), Error>
+    typealias LogoutResultCompletion = (LogoutResult) -> Void
+
+    func logout(completion: @escaping LogoutResultCompletion)
+}

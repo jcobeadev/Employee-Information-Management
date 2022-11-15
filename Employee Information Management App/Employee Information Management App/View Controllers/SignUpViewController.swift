@@ -60,10 +60,6 @@ final class SignUpViewController: UIViewController {
         viewModel.viewDidDisappear()
     }
 
-    deinit {
-        print("deinit from sign up coordinator")
-    }
-
     @IBAction func tappedSignUpButton(_ sender: UIButton) {
         viewModel.signUp { [weak self] error in
             guard let error else { return }

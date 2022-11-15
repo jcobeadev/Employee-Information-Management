@@ -43,8 +43,16 @@ final class EmployeeListViewModel {
         coordinator?.startEditEmployee(employee: employees[indexPath.row])
     }
 
-    func tappedLogout() {
-        coordinator?.didLogOut()
+    func tappedLogout(completion: @escaping (Error?) -> ()) {
+        dataManager.logout { [weak self] result in
+            switch result {
+            case .success:
+                self?.coordinator?.didLogOut()
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
     }
     
 }

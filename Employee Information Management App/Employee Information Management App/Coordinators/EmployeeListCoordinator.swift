@@ -47,7 +47,6 @@ final class EmployeeListCoordinator: Coordinator {
     }
 
     func startEditEmployee(employee: Employee) {
-        print("EmployeeListCoordinator startEditEmployee")
         let employeeDetailsCoordinator = EmployeeDetailsCoordinator(navigationController: navigationController, parentCoordinator: self, employee: employee)
         childCoordinators.append(employeeDetailsCoordinator)
         employeeDetailsCoordinator.start()
@@ -64,6 +63,7 @@ final class EmployeeListCoordinator: Coordinator {
 
     func didLogOut() {
         parentCoordinator?.childDidFinish(self)
+        navigationController.popViewController(animated: true)
     }
 
 }
