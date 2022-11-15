@@ -11,6 +11,7 @@ import RxCocoa
 
 final class EmployeeDetailsViewModel {
 
+    let title = "Employee Details"
     var employee: Employee
     let dataManager: EmployeeLocalDataManager
     weak var coordinator: EmployeeDetailsCoordinator?

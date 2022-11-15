@@ -23,8 +23,7 @@ final class EmployeeDetailsViewController: UIViewController {
         super.viewDidLoad()
         bind()
         viewModel.viewDidLoad()
-        setupInitialTexts()
-        setupEditButton()
+        setupViews()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -70,6 +69,14 @@ extension EmployeeDetailsViewController {
     private func setupSaveButton() {
         let editButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(tappedSaveButton))
         self.navigationItem.rightBarButtonItem = editButton
+    }
+
+    private func setupViews() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = viewModel.title
+
+        setupInitialTexts()
+        setupEditButton()
     }
 
     private func setupInitialTexts() {
