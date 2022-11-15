@@ -9,9 +9,9 @@ import Foundation
 
 struct Employee {
     let id: String
-    let companyID: String
-    let firstName: String
-    let lastName: String
-    let role: String
-    let isResigned: Bool
+    var companyID: String
+    var firstName: String
+    var lastName: String
+    var role: String
+    var isResigned: Bool
 }

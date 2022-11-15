@@ -51,6 +51,7 @@ final class AddEmployeeViewModel {
     }
 }
 
+// MARK: Oberserver
 extension AddEmployeeViewModel {
     private func observe() {
         Observable.combineLatest(

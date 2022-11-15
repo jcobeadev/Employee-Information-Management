@@ -868,6 +868,12 @@
                             <constraint firstItem="39K-vc-sGt" firstAttribute="bottom" secondItem="rHA-kZ-l3j" secondAttribute="bottom" id="xDB-bL-rRp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="SSr-4Q-5KA" id="ZCo-i2-05W"/>
+                        <outlet property="isResigned" destination="8fq-Os-ZWZ" id="Hf5-Pr-O0c"/>
+                        <outlet property="lastNameTextField" destination="XTc-XI-Z1Z" id="WUb-Vk-pFs"/>
+                        <outlet property="roleTextField" destination="9zQ-hA-6kQ" id="Ka1-0g-wlf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zl8-ON-dgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
