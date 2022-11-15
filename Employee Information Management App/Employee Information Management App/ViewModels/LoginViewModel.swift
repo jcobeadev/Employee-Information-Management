@@ -43,13 +43,14 @@ final class LoginViewModel {
             }.startWith(false)
     }
 
-    func tappedLogin() {
+    func tappedLogin(completion: @escaping (Error?) -> Void) {
         dataManager.login(userName: userName, password: password) { [weak self] result in
             switch result {
             case .success:
+                completion(nil)
                 self?.coordinator?.startEmployeeLists(animated: true)
             case let .failure(error):
-                print(error)
+                completion(error)
             }
         }
     }

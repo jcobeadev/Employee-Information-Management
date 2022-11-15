@@ -130,7 +130,7 @@ extension LocalDataManager: LoginLocalDataManager {
 
                 completion(.success(company))
             } else {
-                let error = NSError(domain: "Company does not exists. Please sign up.", code: 9999, userInfo: nil)
+                let error: DataManagerError = .companyDoesNotExist
                 completion(.failure(error))
             }
 

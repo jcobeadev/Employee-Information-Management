@@ -13,6 +13,7 @@
 		B1227A07291F4D2E00E7E009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1227A06291F4D2E00E7E009 /* Assets.xcassets */; };
 		B1227A0A291F4D2E00E7E009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1227A08291F4D2E00E7E009 /* LaunchScreen.storyboard */; };
 		B1227A15291F4D2E00E7E009 /* Employee_Information_Management_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1227A14291F4D2E00E7E009 /* Employee_Information_Management_AppTests.swift */; };
+		B163C73B2923D43900449E1C /* DataManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B163C73A2923D43900449E1C /* DataManagerError.swift */; };
 		B186EFDE291F64B900BF8D52 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFDD291F64B900BF8D52 /* AppCoordinator.swift */; };
 		B186EFE0291F67EE00BF8D52 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFDF291F67EE00BF8D52 /* LoginCoordinator.swift */; };
 		B186EFE3291F684F00BF8D52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B186EFE2291F684F00BF8D52 /* LoginViewController.swift */; };
@@ -68,6 +69,7 @@
 		B1227A0B291F4D2E00E7E009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1227A10291F4D2E00E7E009 /* Employee Information Management AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Employee Information Management AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1227A14291F4D2E00E7E009 /* Employee_Information_Management_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee_Information_Management_AppTests.swift; sourceTree = "<group>"; };
+		B163C73A2923D43900449E1C /* DataManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerError.swift; sourceTree = "<group>"; };
 		B186EFDD291F64B900BF8D52 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B186EFDF291F67EE00BF8D52 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		B186EFE2291F684F00BF8D52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				B18E06E429229B5500D0887E /* EmployeeLocalDataManager.swift */,
 				B186F00E291FCDCF00BF8D52 /* CompanyProvider.swift */,
 				B186F014291FDC8B00BF8D52 /* LocalDataManager.swift */,
+				B163C73A2923D43900449E1C /* DataManagerError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				B186EFEF291F6F9600BF8D52 /* EmployeeListViewModel.swift in Sources */,
 				B186EFE7291F6A6B00BF8D52 /* EmployeeListViewController.swift in Sources */,
 				B18E06E0291FF1E300D0887E /* EmployeeCell.swift in Sources */,
+				B163C73B2923D43900449E1C /* DataManagerError.swift in Sources */,
 				B186F00F291FCDCF00BF8D52 /* CompanyProvider.swift in Sources */,
 				B186F007291FB7EC00BF8D52 /* SignUpLocalDataManager.swift in Sources */,
 				B186EFFA291F764000BF8D52 /* UIViewController+Extensions.swift in Sources */,
