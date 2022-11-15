@@ -36,9 +36,15 @@ final class EmployeeListViewModel {
          coordinator?.startAddEmployee()
     }
 
+    func tappedItem(at indexPath: IndexPath) {
+        guard let employees = try? employees.value() else { return }
+        print(employees[indexPath.row])
+
+        // tell coordinator that we're going to employee detail screen
+    }
+
     func tappedLogout() {
         coordinator?.didLogOut()
-        print("did logout view model")
     }
 
     deinit {

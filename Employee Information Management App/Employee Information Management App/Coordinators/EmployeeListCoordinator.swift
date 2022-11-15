@@ -59,10 +59,9 @@ final class EmployeeListCoordinator: Coordinator {
 
     func didLogOut() {
         parentCoordinator?.childDidFinish(self)
-        print("did logout coordinator")
     }
 
     deinit {
-        print("deinit from employee list coordinator")
+        print("deinit from employee coordinator")
     }
 }

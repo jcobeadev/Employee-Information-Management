@@ -19,7 +19,7 @@ final class AddEmployeeViewModel {
     private let disposeBag = DisposeBag()
 
     let title = "Add"
-    var coordinator: AddEmployeeCoordinator?
+    weak var coordinator: AddEmployeeCoordinator?
     let dataManager: EmployeeLocalDataManager
 
     init(dataManager: EmployeeLocalDataManager) {

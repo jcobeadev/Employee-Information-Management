@@ -43,6 +43,11 @@ final class EmployeeListViewController: UIViewController {
         viewModel.employees.bind(to: tableView.rx.items(cellIdentifier: "EmployeeCell", cellType: EmployeeCell.self)) { row, item, cell in
             cell.update(with: EmployeeCellViewModel(employee: item))
         }.disposed(by: disposeBag)
+
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            guard let self else { return }
+            self.viewModel.tappedItem(at: indexPath)
+        }).disposed(by: disposeBag)
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -67,7 +72,7 @@ final class EmployeeListViewController: UIViewController {
     }
 
     deinit {
-        print("deinit from employee view controller")
+        print("deinit from employee viewcontroller")
     }
 
 }

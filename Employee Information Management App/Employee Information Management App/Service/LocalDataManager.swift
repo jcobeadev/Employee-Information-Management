@@ -96,7 +96,6 @@ extension LocalDataManager: EmployeeLocalDataManager {
                 employees[index] = employee
             }
             try writeData(employees: employees.toLocal())
-
         } catch {
             completion(.failure(error))
         }
