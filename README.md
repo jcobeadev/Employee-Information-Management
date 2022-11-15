@@ -5,7 +5,7 @@
 
 
 <p align="center">
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Images/AppDataFlowCoordinator.png" alt="App Data Flow Diagram" title="App Data Flow Diagram" width="400"/>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Images/AppDataFlowCoordinator.png" alt="App Data Flow Diagram" title="App Data Flow Diagram"/>
 </p>
 
 
