@@ -9,11 +9,10 @@
 
 ## Demo
 <p align="center">
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Signup.gif" alt="Demo" title="Demo"/ width=200>
-<figcaption> Sign up </figcaption>
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Login.gif" alt="Demo" title="Demo"/ width=200>
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/AddEmployee.gif" alt="Demo" title="Demo"/ width=200>
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/EditEmployee.gif" alt="Demo" title="Demo"/ width=200>
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Logout.gif" alt="Demo" title="Demo"/ width=200>
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/LoginOtherCompany.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Signup.gif" alt="Signup" title="Signup"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Login.gif" alt="Login" title="Login"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/AddEmployee.gif" alt="AddEmployee" title="AddEmployee"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/EditEmployee.gif" alt="EditEmployee" title="EditEmployee"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Logout.gif" alt="Logout" title="Logout"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/LoginOtherCompany.gif" alt="LoginOtherCompany" title="LoginOtherCompany"/ width=200>
 </p>
