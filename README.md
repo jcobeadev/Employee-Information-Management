@@ -39,7 +39,7 @@ In this project, I followed MVVM-C for the user interface architecture & Coordin
 </p>
 
 ## Demo
-** Please hover to the gif to see what specific functionality it is doing. Thank you** 
+**Please hover to the gif to see what specific functionality it is doing. Thank you** 
 <p align="center">
 <img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Signup.gif" alt="Signup" title="Signup"/ width=230>
 <img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Login.gif" alt="Login" title="Login"/ width=230>
