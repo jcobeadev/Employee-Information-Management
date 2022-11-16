@@ -9,8 +9,10 @@
 
 ## Demo
 <p align="center">
-<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Demo.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Signup.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Login.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/AddEmployee.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/EditEmployee.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Logout.gif" alt="Demo" title="Demo"/ width=200>
+<img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/LoginOtherCompany.gif" alt="Demo" title="Demo"/ width=200>
 </p>
-
-
-
