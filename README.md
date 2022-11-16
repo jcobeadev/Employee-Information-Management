@@ -20,7 +20,7 @@ In this project, I followed MVVM-C for the user interface architecture & Coordin
 * As of the moment, all functionalities are implemented by *LocalDataManager* and this class is injected in the viewModels where is it needed.
 * Since I can now successfully read and write data in the JSON file, I decided to learn data bindings in RXSwift. RxSwift is broad topic so I just decided to use the basics of it. 
 * I implemented validation using RXSwift.
-* In relation with the framework dependency, at first I decided to use _Cocoapod_ but since I don't want the reviewer to put time in installing the pod. I decided to switch in _Swift Package Manager_.
+* In relation with the framework dependency, at first I decided to use _Cocoapod_ but since I don't want the reviewer to take time in installing the pod. I decided to switch in _Swift Package Manager_.
 * I implemented error handling and presentation of the alert. I created custom enums for this one, because this will help us to handle error easily. You can check *DataManagerError*, *SignupError*.
 * I used the last minute of the time to create some test. But for some reason, I cannot test the application. It is because the application is looking for 'RxCocoaRuntime'. I currently searching the cause of this. (_Im going to try to solve this at *unit-testing-and-ci* branch_)
 
