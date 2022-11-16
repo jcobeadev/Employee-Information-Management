@@ -10,6 +10,7 @@
 ## Demo
 <p align="center">
 <img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Signup.gif" alt="Demo" title="Demo"/ width=200>
+<figcaption> Sign up </figcaption>
 <img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/Login.gif" alt="Demo" title="Demo"/ width=200>
 <img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/AddEmployee.gif" alt="Demo" title="Demo"/ width=200>
 <img src="https://github.com/jcobeadev/Employee-Information-Management/blob/main/Files/EditEmployee.gif" alt="Demo" title="Demo"/ width=200>
