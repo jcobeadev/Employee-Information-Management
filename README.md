@@ -3,6 +3,7 @@
 
 #
 **Dear Reviewers,**
+
 Thank you for taking the time to review my project
 
 So in this project, I followed MVVM-C for the user interface architecture, Coordinator to handle the navigation of the application, and RXSwift for binding data. Initially, I was planning to create a separate scheme for business logic for this project to become platform agnostic, and run the test in macOS target so I can run the test fast (TDD approach). But, since I didn’t have experience in RXSwift and Coordinator, and with the time constraint I decided to learn Coordinator and RxSwift first by creating the entire application itself.
