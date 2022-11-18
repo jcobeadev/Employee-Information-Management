@@ -13,9 +13,9 @@ In this project, I followed MVVM-C for the user interface architecture & Coordin
 * I watched some tutorials regarding with the coordinator pattern.
 * I implemented the _coordinator_ in parallel of creating the user interface at storyboard (Login, EmployeeList)
 * Since I need the fetch and persist some _JSON_ file that is stored in the device. I made some research and it brings me to saving the file at the _Documents_ directory.  
-* I created a separate model that will _interact_ when where persisting and when where displaying it to the UI. I created *PersistableCompany* to represent the _low level_ data and *Company* to represent _high level_ data. If you browse the file, you will see that the property casing (camelCase, snake_case) of both file is different. I used snake_case in the low level data for us to easily interact with JSON file. I used camelCase in the high level data because it is the coding standard and swift. High Level Data should be also a light weight data, and it shouldn't have dependency.
+* I created a separate model that will _interact_ when we're persisting and when we're' displaying it to the UI. I created *PersistableCompany* to represent the _low level_ data and *Company* to represent _high level_ data. If you browse the file, you will see that the property casing (camelCase, snake_case) of both file is different. I used snake_case in the low level data for us to easily interact with JSON file. I used camelCase in the high level data because it is the coding standard and swift. High Level Data should be also a light weight data, and it shouldn't have dependency.
 * I created extensions of an array to easily *transform* High level and Low Level Data.
-* In relation with the functionalities of the application. I created a separated protocol for it. I used protocol here to respect *Dependency Inversion* of the _SOLID_ principles. This will be located at _Service_ folder (SignUpLocalDataManager, LoginLocalDataManager, EmployeeLocalDataManager, etc.). These functionalities made like this for us to easily inject other infrastructure (like if we want to save it in Realm or CoreData).
+* In relation with the functionalities of the application. I created separate protocols for it. I used protocol here to respect *Dependency Inversion* of the _SOLID_ principles. This will be located at _Service_ folder (SignUpLocalDataManager, LoginLocalDataManager, EmployeeLocalDataManager, etc.). These functionalities are made like this for us to easily inject other infrastructure (like if we want to save it in Realm or CoreData).
 * I also created a file called _CompanyProvider_, that will Provide if the application has session and who's that company.
 * As of the moment, all functionalities are implemented by *LocalDataManager* and this class is injected in the viewModels where is it needed.
 * Since I can now successfully read and write data in the JSON file, I decided to learn data bindings in RXSwift. RxSwift is broad topic so I just decided to use the basics of it. 
@@ -25,7 +25,7 @@ In this project, I followed MVVM-C for the user interface architecture & Coordin
 * I used the last minute of the time to create some test. But for some reason, I cannot test the application. It is because the application is looking for 'RxCocoaRuntime'. I currently searching the cause of this. (_Im going to try to solve this at *unit-testing-and-ci* branch_)
 
 #
-**Things that I think needed to be improved/implemented**
+**Things I need to improve/implement**
 * *Implement Unit Testing* (requirement of the task)
 * Saving an object by one, not replacing the json file.
 * Procotols/Properties naming
